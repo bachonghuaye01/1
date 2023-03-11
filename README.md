@@ -351,8 +351,8 @@ Java是使用“访问控制符”来控制那些细节需要封装，那些细�
 + 访问修饰符：只能是public或默认。
 + 接口名：和类名采用相同命名机制。
 + extends：接口可以多继承。
-+ 常量：接口中的属性只能是常量，总是：public static final 修饰。不写也是用他们修饰。
-+ 方法：接口中的方法只能是：public abstract。省略的话，它也是public abstract。
++ 常量：接口中的属性只能是常量，总是：public static final 修饰。不写也是用他们修饰，自动加。
++ 方法：接口中的方法只能是：public abstract。省略的话，它也是public abstract，自动加。
 
 **要点**
 
@@ -361,3 +361,29 @@ Java是使用“访问控制符”来控制那些细节需要封装，那些细�
 + 一个类实现了接口，必须实现接口中所有的方法，并且这些方法只能是public的。
 + JDK1.8（不含8）之前，接口中只能包含静态常量，抽象方法。不能有普通属性，构造方法，普通方法。
 + JDK1.8（含8）后，接口中包含普通的静态方法，默认方法。
+
+```
+//飞行接口
+public interface Volant{
+  int flyTime = 1minute;   //常量这里 int 前面是有public static final的，不写也会自动加，不过被隐藏了
+  void fly();           //方法这里也一样，void前有public abstract，不写也自动加
+}
+//善良接口
+interface Honest{
+  void helpOther();
+  }
+  
+  class Bird implements Volant（）{
+    public void fly(){                  //实现接口Volant里的方法
+        System.out.println("想飞就飞");
+    }
+  
+  class Angel implements Volant,Honest（）{
+    public void fly(){                  
+        System.out.println("天使能飞");
+    }
+    public void helpOther(){                  //同时满足两个接口
+        System.out.println("天使帮助人");
+    }
+  }
+```
