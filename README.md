@@ -265,6 +265,26 @@ Java是使用“访问控制符”来控制那些细节需要封装，那些细�
 
 }
 
+**例：**假如有个Animal类
+
+  Animal animal = new Dog(); //编译类型Animal，运行类型Dog。      //向上转型（自动）
+  
+  animal.shout();
+  
+  Dog a = (Dog)animal;  //向下转型（强制）
+  
+  a.eatMeat();
+  
+  if(animal instanceof Cat){    //判断，是猫的话就吃鱼
+  
+    Cat b = (Cat)animal;
+    
+    b.eatFish();
+    
+    }
+    
+}
+  
 来进行判断。//转型后还是原本的对象
 
 > 这里详细点写,最好可以写一个实际的例子.
