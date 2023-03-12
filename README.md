@@ -440,3 +440,28 @@ String：就是把一堆字符穿起来，统一使用（相当于烤肉的签�
 + String 位于 java.lang 包中，Java 程序默认导入 java.lang 包下的所有类。
 + Java 字符串就是 **Unicode 字符序列**，例如字符串“Java”就是由4个 Unicode 字符“J”，“a”，“v”，“a”组成的。
 + Java 没有内置的字符串类型，而是在标准 Java 类库中提供了一个预定义的类 String，每个用双引号括起来的字符串都是 String 类。
+
+另外
+```
+String s1 = null;
+String s2 = "";     //虽然s2也是空字符串，但是跟s1的null不同，他是创建了一个字符串s2但内容是空
+```
+** String 类和常量池**
+
+常量池分为三种：全局字符串常量池，class 文件常量池，运行时常量池（Runtime Constant Pool）。
+
+每个 class 加载以后都有一个运行时常量池
+
+```
+String a = "乔木";                  //a 直接引用常量池中的"乔木"
+String b = "乔木";                  //b 也直接引用常量池中的"乔木"，所以他们俩指的是同一个对象
+String c = new String("乔木");      //c 因为自己又 new 了个 String，所以在堆里会有个新对象，只不过里面的数组还是"乔木"
+
+System.out.println(a == b);         //true    因为 a 等于 b，是同一个对象，所以是 true
+System.out.println(a == c);         //false   因为 c 创建了个新对象，不是同一个对象，所以这里是 false 
+System.out.println(a.equals(c));    //true    equaks 比较的是里面的字符是不是相等，这里两个都是"乔木"，所以这里也是 trus
+```
+
+比较字符串时通常都会使用 eauals，因为我们一般都是比较字符
+
+3/13
