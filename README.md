@@ -88,7 +88,7 @@ import java.util.*;  //这里的 .* 的作用是导入该包下所有类，会�
 
 3/6
 
-## 面向对象的三大特征
+# 面向对象的三大特征
 
 **继承**   **封装**   **多态**
 
@@ -302,7 +302,7 @@ Java是使用“访问控制符”来控制那些细节需要封装，那些细�
 （晚上回来再搞）
 > 学习一下makedown语法标记代码段的方式,把之前的代码段都用这种方式标记上,进度要加快点,3月已经过去三分之一了.
 
-## 抽象类和接口
+# 抽象类和接口
 
 **抽象方法和抽象类**
 
@@ -478,7 +478,7 @@ System.out.println(a.equals(c));    //true    equals 比较的是里面的字符
 
 3/13
 
-## String 类常用的方法
+# String 类常用的方法
 
 **String 类常用方法列表**
 
@@ -510,4 +510,40 @@ System.out.println(a.equals(c));    //true    equals 比较的是里面的字符
 **注意**
 内部类只是一个编译时的概念，编译成功后会成为两个完全不同的类。比如一个名为 A 的外部类和其内部定义的名为Aa 的内部类。在编译完成后会出现 A.class 和 A$Aa.class 两个类的字节码文件。所以内部类是相对独立的一种存在，其成员变量/方法名都可以和外部类相同
 
+```
+public class Outer{                             //外部类
+  private int age = 10;
+  public void show(){
+      System.out,println("Outer.show");
+      System.out.println(age);
+  }
+  public class Inner{                           //内部类
+      private int age = 20;
+      public void show(){
+          System.out,println("Inner.show"); 
+          System.out.println(age);
+           System.out.println(Outer.this.age);  //访问外部类 Outer 的属性
+           Outer.this.show();                   
+      }
+  }
+  
+}
+```
+
 ## 非静态内部类
+
+**非静态内部类（外部类里使用非静态内部类和其他类没啥区别）
+1. 非静态内部类对象必须寄存在一个外部类对象里。因此，如果有一个非静态内部类对象，那么一定存在对应的外部类对象。非静态内部类对象单独属于外部类的某个对象。
+2. 非静态内部类可以直接访问外部类的成员，但是外部类不能直接访问非静态内部类成员。
+3. 非静态内部类不能有静态方法，静态属性，静态初始化块
+4. + **成员变量**访问要点；
+   - 内部类属性：this.变量名
+   - 外部类属性： 外部类名.this.变量名
+
+调用内部类
+```
+  public static void main(String[] args){
+      Outer.Inner i = new Outer().new Inner();      //这里直接输入 Inner 会报错，因为内部类不能独立存在，所以要在Inner前输入外部类，即Outer.
+      inner.show();
+  }
+```
