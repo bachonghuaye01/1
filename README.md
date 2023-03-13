@@ -501,4 +501,5 @@ System.out.println(a.equals(c));    //true    equals 比较的是里面的字符
 ## 内部类
 
 把一个类放在另一个类的内部定义，称为内部类（inner class）。
+![QQ图片20230313211611](https://user-images.githubusercontent.com/110222247/224700829-325fb896-8919-438c-87d3-65bba27353c9.png)
 
