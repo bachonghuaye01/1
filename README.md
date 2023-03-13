@@ -578,7 +578,7 @@ class Outer2{
 public class TestStaticInnerClass{
     public static void main(String[] args){
     
-        Outer2.Inner2 inner =new Outer2.Inner2();   //通过 nwe 外部类名。内部类名（ 来创建内部类对象）
+        Outer2.Inner2 inner =new Outer2.Inner2();   //通过 new 外部类名.内部类名（来创建内部类对象）
         inner.test();
     }
 }
