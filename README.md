@@ -332,13 +332,12 @@ Java是使用“访问控制符”来控制那些细节需要封装，那些细�
 
 接口是两个模块之间通信的标准和规范。设计模块之间的接口就相当于系统的大纲，以后做系统时往往使用的就是“面向接口”的思想来设计系统。
 
-接口和实现类不是父子关系，是实现规则的关系。（意思是我设一个呼吸的规则，呼吸需要张嘴，再设多个类，人，狗，猫，他们可以各活各的，但如果想呼吸就必须得张嘴。这么个逻辑吗）
+接口和实现类不是父子关系，是实现规则的关系。
 > 差不多是这个意思,但我理解不是实现接口后必须要呼吸,而是谁需要呼吸的话,谁就来实现呼吸接口,不需要呼吸的类就不需要实现了,我理解是这样的关系,你如果没理解可以再问我一下.
 
 > 昨天我可能没理解你的想法,是这样的,假设有三个类,人,狗,猫,他们三个类都实现了生物接口,生物接口中声明了一个呼吸方法,那这三个类都必须重写(或者说实现)呼吸方法,具体的实现方式由类内自己管理,但必须要保证这个方法大家都有实现.(也可以把人,狗,猫声明为抽象类,不过很明显不是我们讨论的范围.)
 ![image](https://user-images.githubusercontent.com/50293047/224560051-f213093d-4a39-4637-b8cc-6b30f43f18c5.png)
 ![image](https://user-images.githubusercontent.com/50293047/224560188-bf6d7319-62a3-4256-8529-d5f78c53a9ad.png)
-
 
 
 **如何定义和使用接口**
@@ -396,7 +395,7 @@ interface Honest{
 ```
 > 保持住这个进度,加油.
 
-3/12（在接口的作用里我作了些改动，你看看对不对）
+3/12
 
 **接口中定义静态方法和默认方法（JDK8）**
 
@@ -452,7 +451,7 @@ String：就是把一堆字符穿起来，统一使用（相当于烤肉的签�
 String s1 = null;
 String s2 = "";     //虽然s2也是空字符串，但是跟s1的null不同，他是创建了一个字符串s2但内容是空
 ```
-** String 类和常量池**
+**String 类和常量池**
 
 常量池分为三种：全局字符串常量池，class 文件常量池，运行时常量池（Runtime Constant Pool）。
 
@@ -465,7 +464,7 @@ String c = new String("乔木");      //c 因为自己又 new 了个 String，�
 
 System.out.println(a == b);         //true    因为 a 等于 b，是同一个对象，所以是 true
 System.out.println(a == c);         //false   因为 c 创建了个新对象，不是同一个对象，所以这里是 false 
-System.out.println(a.equals(c));    //true    equaks 比较的是里面的字符是不是相等，这里两个都是"乔木"，所以这里也是 trus
+System.out.println(a.equals(c));    //true    equals 比较的是里面的字符是不是相等，这里两个都是"乔木"，所以这里也是 trus
 ```
 
 比较字符串时通常都会使用 eauals，因为我们一般都是比较字符
@@ -473,3 +472,23 @@ System.out.println(a.equals(c));    //true    equaks 比较的是里面的字符
 > 对makedown语法逐渐熟悉起来后,可以把之前页面不清晰的地方重新改一下,自己复习起来也更容易.加油!
 
 3/13
+
+## String 类常用的方法
+
+**String 类常用方法列表**
+
+|**方法**                                             |**解释说明**                                        |
+|:-:                                                  |:-:                                                |
+|char charAt(int index)                               |返回字符串中第 index 个字符                         |
+|boolean equals(String other)                         |如果字符串与 other相等，则返回 true;否则，返回 false；|
+|int indexOf(String str)                              |返回从头开始查找第一个子字符串 str 在字符串中的索引位置。如果未找到字符串，则返回-1 |
+|lastlndexOf()                                        |返回从末尾开始查找第一个字符串 str 在字符串中的索引位置。如果未找到字符串 str，则返回-1|
+|int length()                                         |返回字符串的长度|
+|String replace(char oldChar,char newChar)            |返回一个新串，它是通过用 newChar 替换此字符串中出现的所有 oldChar 而生成的。|
+|boolean startsWith(String prefix)                    |如果字符串以 prefix 开始，则返回 true|
+|boolean endsWith(String prefix)                      |如果字符串以 prefix 结尾，则返回 true|
+|String substring(int beginlndex)                     |返回一个新字符串，该串包含从原始字符串 beginlndex 到串尾|
+|String substring(int beginlndex,int endlndex)        |返回一个新字符串，该串包含从原始字符串 beginlndex 到串尾或 endlndex-1 的所有字符|
+|String toLowerCase()                                 |返回一个新字符串，该串将原始字符串中的所有大写字母改成小写字母|
+|String toUpperCase()                                 |返回一个新字符串，该串将原始字符串中的所有小写字母改成大写字母|
+|String trim()                                        |返回一个新字符串，该串删除了原始字符串头部和尾部的空格|
