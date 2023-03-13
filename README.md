@@ -584,4 +584,6 @@ public class TestStaticInnerClass{
 }
 ```
 
+> 关于内部类,Android高级进阶阶段会有一个内存泄露的知识点,不过这些都是后话,内部类这里做到会用会写就可以.
+
 3/14
