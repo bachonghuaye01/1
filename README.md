@@ -543,7 +543,7 @@ public class Outer{                             //外部类
 调用内部类
 ```
   public static void main(String[] args){
-      Outer.Inner i = new Outer().new Inner();      //这里直接输入 Inner 会报错，因为内部类不能独立存在，所以要在Inner前输入外部类，即Outer.
+      Outer.Inner i = new Outer().new Inner();    //这里直接输入 Inner 会报错，因为内部类不能独立存在，所以要在Inner前输入外部类，即Outer.
       
       inner.show();
   }
