@@ -587,3 +587,63 @@ public class TestStaticInnerClass{
 > 关于内部类,Android高级进阶阶段会有一个内存泄露的知识点,不过这些都是后话,内部类这里做到会用会写就可以.
 
 3/14
+
+**匿名内部类**
+
+适合只需要用一次的类
+
+```
+    new 父类构造器（实参类表/实现接口（）{
+        //匿名内部类实体
+    }
+```
+**例**
+
+```
+public class TestAnonymousInnerClass{
+  public void test1(A a){
+      a.run();
+  }
+}  
+  public static void main(String[] args){
+       TestAnonymousInnerClass t = new  TestAnonymousInnerClass();
+       t.test1(new A(){               //new 的不是接口，是一个没有名字的A的实现类，因为没有名字所以只能用一次
+          public void run(){
+              System.out.println("一个匿名内部类")
+          }
+       });
+        t.test1(new A(){               //又是一个独立的，新的内部类
+          public void run(){
+              System.out.println("第二个匿名内部类")
+          }
+       });
+  }
+  
+  class Aimpl 
+interface   A{
+    void run();
+}
+```
+
+**局部内部类**
+
+定义在方法内部的，作用域也只限于本方法，称为局部内部类。（不怎么用）
+
+
+# 数组
+
+数组也是对象
+
+数组是**相同类型**数据的**有序集合**，其中每一个数据称作一个元素，每个元素可以通过一个索引（下标 index）来访问他们
+
+**数组的四个基本特点**
+
+1. 长度是确定的。（数组一旦被创建，它的大小就是不可改变的）
+
+2. 其元素的类型必须是相同类型，不允许出现混合类型。
+
+3. 数组类型可以是任何数据类型，包括基本类型和引用类型。
+
+4. 数组变量属于引用类型，数组也是对象，数组中的元素相当于对象的属性。
+
+3/15
