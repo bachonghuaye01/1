@@ -770,7 +770,26 @@ public class AppMain {
  
  **例**
  ```
- int[] a = {1,2,3};
- Man[] mans = {new Man(1,1),(new Man(2,2))};
+ int[] a = {1,2,3};                              //静态初始化基本类型数组
+ Man[] mans = {new Man(1,1),(new Man(2,2))};     //静态初始化引用类型数组
  
  ```
+**实例**
+public class Test {
+    public static void main(String args[]){
+    int[] a = {10.20.30.40};
+    
+    Man mans[] = {new Man(1,10),                //可以在“，”后面换行，方便观看
+                  new Man(2,20),
+                  new Man(3,30)};
+                  
+    System.out.println(a[1]);
+    System.out.println(mans[2].getAge());
+    
+    }
+ }
+ ```
+ 
+ **动态初始化**
+ 
+ **数组定义**与**为数组元素分配空间并赋值**的操作分开进行
