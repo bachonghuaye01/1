@@ -829,3 +829,52 @@ String[] s = new String[2];     //默认值：null，null
 > Lambda表达式一定做到看懂会写,程序中会经常用到,数组这里简单了解一下就可以.
 
 3/16
+
+## 数组的常见操作
+
+**遍历，拷贝**
+
+1. 遍历指的是"通过循环遍历数组的所有元素"
+2. 拷贝指的是将某个数组的内容拷贝到另一个数组中
+
+**数组的遍历**
+
+数组元素下标的合法区间：[0,length-1]。可以通过下标来遍历数组中的元素，遍历时可以读取元素的值或者修改元素的值
+
+[0,length-1]
+```
+int[] a = new int[10];    //这里是10，所有下标是 0 到 9 ，从 0 开始数
+```
+
+循环和初始化遍历时，其实就是使用 for 循环。
+
+**for-each 循环**
+
+for-each **专门用于读取数组或集合中所有的元素**，即数组进行遍历。
+
+```
+public class Test {
+    public static void main(String args[]){
+        String[] sz = {"aa","bb","cc","dd"};  //创立数组 sz  
+        
+        for(String A : sz){                   //这里的 A 为正在被遍历的元素
+        
+            System.out.println( A );
+        }
+    }
+}    
+```
+
+**注意点**
+
++ for-each 增强 for 循环在遍历数组过程中不能修改数值中某元素的值
+
++ for-each 仅适用于遍历；不涉及有关索引（下标）的操作      //想用复杂操作还是得老老实实用敲 for 循环
+
+## 数组的拷贝
+
+System.arraycopy(object src,  //源数组
+                 int srcpos,  //源数组中的起始位置
+                 object dest, //目标数组
+                 int destpos, //目标数据中的起始位置
+                 int length)  //要复制的数组元素的数量
