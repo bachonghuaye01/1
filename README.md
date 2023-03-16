@@ -873,8 +873,65 @@ public class Test {
 
 ## 数组的拷贝
 
+```
 System.arraycopy(object src,  //源数组
-                 int srcpos,  //源数组中的起始位置
-                 object dest, //目标数组
+                 int srcpos,  //源数组中的起始位置                 
+                 object dest, //目标数组                 
                  int destpos, //目标数据中的起始位置
                  int length)  //要复制的数组元素的数量
+```
+
+**例**
+
+```
+public class Test {
+    public static void main(String args[]){
+        String[ ] s = {"1号"，"2号"，"3号"，"4号"，"5号"};
+        String[ ] sBak = new String[6];
+        
+        System.arraycopy(s,0,sBak,0,s.length);
+            //arraycopy 为拷贝，从 s 拷贝到 sBak ，拷贝到目标位置 0 ，拷贝数量 s.length     
+            
+        for(int i = 0; i < sBak.length; i++){
+            System.out.print(sBak[i]+ "\t");          //执行结果会有一个 null，因为有6个位置，而里面只放了5个
+        }
+    }
+}    
+```
+
+
+## java.util.Arrays 类
+
+Arrays 类包含了：排序，查找，填充，打印内容，等 常见的数组操作
+
+**例，使用Arrays 类实现排序，二分查找法**
+```
+import java.util.Arrays;
+public class Test {
+    public static void main(String args[]){
+        int[] a = {1,2,325,65,136,12,75,315};
+        
+        System.out.println(a);                    //打印数组引用的值
+        Arrays.sort(a);               //sort 为排序,另外，使用二分法查找必须先对数组进行排序
+        System.out.println(Arrays.toString(a));   //打印数组元素的值
+        //到这里直接输出即为排序
+         System.out.println("该元素的索引："+Arrays.binarySearch(a,12));   //如果有则返回排序后新的索引位置，若未找到则返回负数
+                                          //意为：在 a 中查找有没有 12 这个值
+    }
+ }
+```
+
+**例，使用Arrays 类对数组进行填充**
+```
+import java.util.Arrays;
+public class Test {
+    public static void main(String args[]){
+        int[] a = {1,2,325,65,136,12,75,315};
+        System.out.println(Arrays.toString(a));
+        
+        Arrays.fill(a,2,7,100);         //将2到7索引的元素替换为100；注意，不包含7
+        System.out.println(Arrays.toString(a));     //这里输出的结果为 [1,2,325,65,136,12,75,315]
+                                                                     [1,2,100,100,100,100,75,315]
+     }
+ }
+```
