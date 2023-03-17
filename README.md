@@ -940,3 +940,47 @@ public class Test {
 
 3/17
 （今天的会比较晚）
+
+## 多维数组
+
+**多维数组可以看成以数组为元素的数组**
+一维为线，二维为面，3维为立方体
+
+**语法**
+```
+public class Test {
+    public static void main(String args[]){
+        //声明和初始化按从低到高的顺序进行
+        int[ ][ ] a = new int [数字][ ];    //注int[ ][ ] a = new int [ ][数字];的形态非法
+        a[0] = new int [数字];
+        a[1] = new int [数字];
+        
+        a[][] = 输入值；
+        
+        //静态初始化语法
+        int[ ][ ] b = {
+                        {1,2,3},
+                        {2,3,4,5}
+        };
+        
+        System.out.println(b[第几排][第几个])；
+    }
+}
+```
+
+## 数组存储表格数据
+
+|**ID**|**姓名**|**年龄**|**职能**|
+|   ---|     ---|    ---|     ---|
+|1001  | 小A    |  18   |  学生   |
+
+上图转为一维数组
+```
+Object[] a1 = {1001,"小A","18","学生"};  //数字不是对象，但java有个自动装箱，自动给装成对象
+//转2维
+Object[][] emps = Object[1][];
+emps[0] = a1;
+
+System.out.println(Arrays.toString(emps[0]));
+```
+3/18
