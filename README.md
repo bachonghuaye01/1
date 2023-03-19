@@ -1057,3 +1057,86 @@ public int compareTo(Object o){
  > 这里不分大小问题,只要是异常就是问题,如果你捕获异常,并作出正确的处理方式,那程序就还能继续跑下去,如果发生错误时,你没有事先告诉程序发生错误应该如何处理,那就会停止.
     
  3/19（超链接周一一起搞）
+ 
+ ## 异常分类
+ 
+ Java对异常进行了分类，所有异常的根类为 java.lang.Throwable,Throwable 下面又派生了两个子类：Error 和 Exception
+ 
+ ![QQ图片20230320010224](https://user-images.githubusercontent.com/110222247/226188494-89d102c2-db2d-4dc5-b364-49e37d0a0285.png)
+
+**Error**
+
+Error 是程序无法处理的错误，表示运行应用程序中较严重的问题。（JVM处于不可恢复的崩溃，不用处理了，直接重启）
+
+大多数错误与代码编写者执行的操作无关，而表示代码运行时 JVM（Java虚拟机）出现的问题。
+
+**Exception**
+
+Exception 是程序本身能处理的异常。
+
+Exception 类是所有异常类的父类，其子类对应了各种各样的异常事件，通常分为两类
+
+1. RuntimeException 运行时异常  //编译器不管，运行时才会出现异常
+2. CheckedException 已检查异常  //在编译时就会报错
+
+![QQ图片20230320010904](https://user-images.githubusercontent.com/110222247/226188954-67e20114-7418-4da5-a70e-25477632b6a0.png)
+
+
+**RuntimeException 运行时异常**
+
+编译器不处理 RuntimeException，需要自行增加逻辑处理来避免这种异常
+
+**例**
+```
+//String str = null;
+//System.out.println(ste.charAt(0));
+//str为空，但是调用了它的方法，调用不到所有会报异常
+
+String str = null;
+if(str ! = null){           //通过增加条件判断来避免
+    System.out.println(ste.charAt(0));
+}
+```
+
+**CheckedException 已检查异常**
+
+编译器已检查的异常，在编译时就必须处理，否则无法通过编译
+
+CheckedException 异常处理方式也有两种；
+
+1. 使用"try/catch" 捕获异常 用"finally"结尾
+
+![QQ图片20230320013014](https://user-images.githubusercontent.com/110222247/226190167-584dbf54-a912-45ad-9821-a5169ceb73cc.png)
+
+**注意**：异常处理的代码执行结束后，不会回到try语句去执行尚未执行的代码
+
+**try**
+
+指定了一段代码，这段代码就是异常捕获并处理的范围。
+
+**catch**
+
+每个 try 语句可以伴随一个或多个 catch语句
+
+如果异常类之间有继承关系，**先捕获子类异常再捕获父类异常**
+
+**finally**
+
+不管是否发生异常都必须执行
+
+通常在 finally 中关闭已打开的资源
+
+2. 使用"throws"    声明异常
+
+CheckedException 产生时，不一定立刻处理它，可以把异常 throws，**由调用者处理**
+
+一个方法抛出多个已检查异常，就必须在方法的首部列出所有的异常
+```
+public static void main(String args[]) throws 异常名 {
+
+    finally{                      //无论抛不抛出，有没有异常，都是得关闭的，不然会一直持续占用资源
+      System.out.println(" ");
+    }
+}
+```
+(调用者不想解决也可以继续往外抛，直到抛到 JRE (运行环境)里)
