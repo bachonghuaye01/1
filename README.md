@@ -4,11 +4,11 @@
 
 (1)[https://www.bilibili.com/video/BV1qL411u7eE/?vd_source=1ab487dfeeaaca5ba8f4e0a6343d7b8e]
 
-this
+[this](#1)
 
-static
+[static](#2)
 
-包机制（package,import）
+[包机制（package,import）](#3)
 
 导入类import
 
@@ -23,7 +23,7 @@ final 关键字
 
 组合
 
-(Object类)[202]
+Object类
 
 ==和equals方法
 
@@ -75,6 +75,8 @@ Comparable 接口
 
 3/3
 
+<h2 id="1"></h2>
+
 ## this
 + this代表当前对象本身，本质是当前对象  
   - 普通方法中this指向调用该方法的对象  
@@ -82,6 +84,9 @@ Comparable 接口
 + this（）调用重载的构造方法，避免相同的初始化代码。但只能在构造方法中用且必须位于第一句  
 + this不能用于静态方法，//因为在两个不同的区域？this在堆，staic在方法区  
 > static的含义为首先加载到内存中,当程序开始运行时,会首先将被static修饰的类,方法和变量加载到内存中.因此static方法中不可直接访问非static的成员,因为此时非static的成员还没有被创建.
+
+<h3 id="2"></h3>
+
 ## static
 静态变量，方法（类变量，方法）：static声明的属性或方法  
 
@@ -109,6 +114,8 @@ static方法中不可直接访问非static的成员
   |静态变量  | 类内部，static修饰 |     类     | 类被加载，静态变量就有效 |
   
 3/4
+<h4 id="3"></h4>
+
 ## 包机制（package,import）
 包（package）相当于文件夹，用于管理类，用于解决类的重名问题  
 
@@ -1211,3 +1218,61 @@ public static void main(String args[]) throws 异常名 {
 }
 ```
 (调用者不想解决也可以继续往外抛，直到抛到 JRE (运行环境)里)
+
+3/20
+
+**try-with-resource 自动关闭 Closable 接口的资源
+
+try-with-resource 可以自动关闭实现了 Closable 接口的类
+
+```
+try(FileReader = new FileReader(文件地址;)		//try()里面打开的资源会自动关掉
+    FileReader = new FileReader(文件地址;)
+){
+
+}catch (Exceptiion e){
+     e.printStackTrace();
+}
+```
+
+## 自定义异常
+
+在 JDK 提供的任何异常类都无法充分描述清楚想要表达的问题时，可以自己创建异常类，即自定义异常类
+
+自定义异常类只需从 Exception 类或者它的子类派生一个子类
+
+自定义异常类如果继承 Exception 类，则为 CheckedException 异常，必须进行处理；如果不想处理，可以让自定义异常类继承运行时异常 RuntimeException 类。
+
+一般而言，自定义异常类应该包含 2 个构造器：一个默认构造器，一个带有详细信息的构造器
+
+**常见异常写法**
+```
+puvlic class IllegalAgeException extends Exception{
+	public IllegalAgeException(){
+	}
+	
+	public IllegalAgeException(String message){
+		super(message);
+	}
+}
+```
+
+**注**自己解决不了怎么办
+
+1. 细心查看异常信息，确定异常种类和相关 Java 代码行号
+
+2. 确定上下文的一些关键词信息（疑难问题，需要）
+   
+   拷贝异常信息到百度，查看相关帖子，寻找思路
+   
+3. 问人
+
+**超级搜索**
+
+关键词描述先细后粗
+
+1. 寻找问题本身的关键词（名词）
+
+2. 寻找问题上下文的关键词（名词）
+
+3. 尽量细致的描述问题，如果没找到，通过慢慢减少关键词来扩大搜索范围
