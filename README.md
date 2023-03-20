@@ -2,9 +2,9 @@
 练习
 每天一问
 
-(1)[https://www.bilibili.com/video/BV1qL411u7eE/?vd_source=1ab487dfeeaaca5ba8f4e0a6343d7b8e]
+[Java视频链接](https://www.bilibili.com/video/BV1qL411u7eE/?vd_source=1ab487dfeeaaca5ba8f4e0a6343d7b8e)
 
-[this](#1)
+[this](https://github.com/bachonghuaye01/1/edit/main/README.md#L80)
 
 [static](#2)
 
