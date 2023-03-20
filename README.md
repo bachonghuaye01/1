@@ -4,7 +4,13 @@
 
 [Java视频链接](https://www.bilibili.com/video/BV1qL411u7eE/?vd_source=1ab487dfeeaaca5ba8f4e0a6343d7b8e)
 
+> 给问题附加超链接的格式[文字描述](超链接地址)
+
 [this](https://github.com/bachonghuaye01/1/edit/main/README.md#L80)
+
+> 可以使用这种超链接来跳转到其他文件中,例如下面的例子,在知识点总结的时候,可以把对应的代码超链接附加上.
+> ![image](https://user-images.githubusercontent.com/50293047/226360688-3d94a2aa-17df-4828-b1a5-c3d188c6c67f.png)
+
 
 [static](#2)
 
