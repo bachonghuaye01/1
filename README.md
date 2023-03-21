@@ -1282,3 +1282,46 @@ puvlic class IllegalAgeException extends Exception{
 2. 寻找问题上下文的关键词（名词）
 
 3. 尽量细致的描述问题，如果没找到，通过慢慢减少关键词来扩大搜索范围
+
+3/21
+
+## IDEA 调试 debug
+
+**断点 breakpoint**
+
+调试的核心是断点。程序执行到断点时，暂时挂起，相当于看视频按暂停
+
+在行号旁边左键一下就可以设置断点，再点一下取消
+
+**进入调试视图**
+
+设置断点后，右键单击该行，选择 Debug
+
+![QQ图片20230321232354](https://user-images.githubusercontent.com/110222247/226638485-b305e57c-4656-4fca-842a-6f94843072be.png)
+
+
+
+
+
+---
+![QQ图片20230321232545](https://user-images.githubusercontent.com/110222247/226638532-11477160-80cd-4775-ae5b-ddd7386959ca.png)
+
+![QQ图片20230321232644](https://user-images.githubusercontent.com/110222247/226638585-c2c073b5-4224-4721-9e76-9cad88740f74.png)
+
+![QQ图片20230321232750](https://user-images.githubusercontent.com/110222247/226638617-70987ff6-f23c-4b21-99fc-b81913c066d1.png)
+
+
+
+
+
+## 常用类
+
+![QQ图片20230321233747](https://user-images.githubusercontent.com/110222247/226640634-4c698221-1d7b-4dec-b9cf-e62e60d35b27.png)
+
+
+
+
+**基本数据类型的包装类**
+
+
+![基本数据类型对应的包装类](https://user-images.githubusercontent.com/110222247/226642003-5c75d8cd-78f1-46d7-9a74-c3f124d2a5af.png)
