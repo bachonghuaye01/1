@@ -1325,3 +1325,21 @@ puvlic class IllegalAgeException extends Exception{
 
 
 ![基本数据类型对应的包装类](https://user-images.githubusercontent.com/110222247/226642003-5c75d8cd-78f1-46d7-9a74-c3f124d2a5af.png)
+
+
+**Number** 类是抽象类，因此他的抽象方法，所有子类都需要提供实现
+
+**测试包装类的使用**
+
+```
+//把数字转成对象，就是包装类
+public static void main(String[] args){
+	integer i = new Integer(50);		//从 java9 开始被废弃
+	integer j = integer.valueOf(10);	//**官方推荐**
+}
+
+
+//把包装类对象转成基本数据类型
+	int a = j.intValue();
+	double b = j.doubleValue();
+```
