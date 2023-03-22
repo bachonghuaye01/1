@@ -1351,6 +1351,61 @@ public static void main(String[] args){
 1. 作为和基本数据类型对应的类型存在，方便涉及到对象的操作，如 Object[],集合等操作
 2. 包含每种基本数据类型的相关属性，如最大值，最小值等，以及相关的操作方法(在基本数据类型，包装类对象，字符串之间提供相互之间的转化)
 
-> 了解一下自动装箱和自动拆箱.
-
 3/22
+
+自动装箱和拆箱
+
+自动装箱(autoboxing)和拆箱(u boxing):将基本数据类型和包装类自动转换
+
+**自动装箱**
+```
+Lnteger i = 100;      //自动装箱
+//相当于编译器自动作以下的语法编辑
+lnteger i = lnteger.valueOf(100);   //调用的是 valueOf(100),而不是 new lnteger(100)
+```
+**注**；自动装箱时，[-128,127]之间的数有缓存
+
+**自动拆箱**
+
+```
+lnteger i = 100;
+int j = i;        //自动拆箱
+//相当于自动进行以下语法编辑
+int j = i.intValue();
+```
+
+## 字符串相关类
+
+String 类是代表不可变的字符序列
+
+StringBuilde 类和 StringBuffer 类代表可变字符序列
+
+**字符串常量拼接时的优化
+
+```
+//编译器做了优化，直接再编译的时候将字符串进行拼接
+String str1 = "hello"+"java";      //相当于 str1 = "hello java";
+String str2 = "hellojava";
+
+System.out.println(str1 == str2);  //true
+
+String str3 = "hello";
+String str4 = " java";
+//编译的时候不知道变量中存储的是什么，所以没办法在编译时优化
+String str5 = "str3"+"str4";
+
+System.out.println(str2 == str5);	//false
+```
+
+**StringBuffer 和 StringBuilder 可变字符序列
+
+StringBuffer:  线程安全，效率低
+
+StringBuilder: 线程不安全，效率高
+
+![QQ图片20230322221258](https://user-images.githubusercontent.com/110222247/226915343-0bb70095-9a86-41dd-8b17-f07ca08fc69e.png)
+
+![QQ图片20230322221735](https://user-images.githubusercontent.com/110222247/226916477-120c6d9a-8efb-42b3-b586-2bde2b56f22e.png)
+
+
+3/23 (这两天同学来日本了，我招待下更新会少一点。你那个超链接也是连外部网页啊，你的意思是直接把外部视频链接拉进来？达成本页面跳转的方法就按我那样打吗)
