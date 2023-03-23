@@ -2,6 +2,8 @@
 练习
 每天一问
 
+[跳转至最后](#2)
+
 [Java视频链接](https://www.bilibili.com/video/BV1qL411u7eE/?vd_source=1ab487dfeeaaca5ba8f4e0a6343d7b8e)
 
 > 给问题附加超链接的格式[文字描述](超链接地址)
@@ -12,7 +14,7 @@
 > ![image](https://user-images.githubusercontent.com/50293047/226360688-3d94a2aa-17df-4828-b1a5-c3d188c6c67f.png)
 
 
-[static](#2)
+static
 
 [包机制（package,import）](#3)
 
@@ -91,7 +93,6 @@ Comparable 接口
 + this不能用于静态方法，//因为在两个不同的区域？this在堆，staic在方法区  
 > static的含义为首先加载到内存中,当程序开始运行时,会首先将被static修饰的类,方法和变量加载到内存中.因此static方法中不可直接访问非static的成员,因为此时非static的成员还没有被创建.
 
-<h3 id="2"></h3>
 
 ## static
 静态变量，方法（类变量，方法）：static声明的属性或方法  
@@ -1411,3 +1412,5 @@ StringBuilder: 线程不安全，效率高
 3/23 (这两天同学来日本了，我招待下更新会少一点。你那个超链接也是连外部网页啊，你的意思是直接把外部视频链接拉进来？达成本页面跳转的方法就按我那样打吗)
 
 > 好的,少点也坚持一下每天看一点,超链接的我只是告诉你还有这种方式,具体用哪种更好,要靠自己判断.
+
+<h3 id="2"></h3>
