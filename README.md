@@ -1414,3 +1414,54 @@ StringBuilder: 线程不安全，效率高
 > 好的,少点也坚持一下每天看一点,超链接的我只是告诉你还有这种方式,具体用哪种更好,要靠自己判断.
 
 <h3 id="2"></h3>
+
+**StringBuilder**
+
+StringBuilder sb = new StringBuilder();
+for(int i = 0; i < 7; i++){
+	sb.append((char)('a' + i));		//追加单个字符
+}
+System.out.println(sb.toString());		//转换成 String 输出
+
+sb.append(", I can Sing my abc!");		//追加字符串
+System.out.println(sb.toString());
+```
+
+**StringBuffer, 下面的方法同样适用于 StringBuilder**
+```
+StringBuffer sb2 = new StringBuffer("睡觉");
+sb2.insert(0.早).sb2.insert(0.晚);		//插入字符串
+System.out.println(sb2;)
+
+sb2.delete(0.2);				//删除子字符串
+System.out.println(sb2;)
+
+sb2.deleteCharAt(0).deleteCharAt(0);		//删除某个字符
+System.out.println(sb2.charAt(0));		//获取某个字符
+System.out.println(sb2.reverse());		//字符串逆序
+```
+
+##不可变和可变字符序列使用陷阱
+
+```
+public static void main(String[] args){
+//使用 String 进行字符串的拼接
+	String str8 = "";
+	
+	long num1  = Runtime.getRuntime().freeMemory();		//获取系统剩余内存空间
+	long time1 = System.currentTimeMillis();		//获取系统的当前时间
+	
+	for (int i = 0; i < 5000; i++){
+		str8 = str8 + i;				//相当于产生了5000个对象
+	}
+	
+	long num2  = Runtime.getRuntime().freeMemory();		
+	long time3 = System.currentTimeMillis();
+	System.out.println("String占用内存 : " + (num2 - num1));
+	System.out.println("String占用内存 : " + (time2 - time1));
+	
+//使用 StringBuilder 进行字符串的拼接
+	
+	
+
+}
