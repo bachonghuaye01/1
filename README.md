@@ -1416,7 +1416,7 @@ StringBuilder: 线程不安全，效率高
 <h3 id="2"></h3>
 
 **StringBuilder**
-
+```
 StringBuilder sb = new StringBuilder();
 for(int i = 0; i < 7; i++){
 	sb.append((char)('a' + i));		//追加单个字符
@@ -1427,7 +1427,7 @@ sb.append(", I can Sing my abc!");		//追加字符串
 System.out.println(sb.toString());
 ```
 
-**StringBuffer, 下面的方法同样适用于 StringBuilder**
+**StringBuffer,下面的方法同样适用于StringBuilder**
 ```
 StringBuffer sb2 = new StringBuffer("睡觉");
 sb2.insert(0.早).sb2.insert(0.晚);		//插入字符串
@@ -1441,7 +1441,7 @@ System.out.println(sb2.charAt(0));		//获取某个字符
 System.out.println(sb2.reverse());		//字符串逆序
 ```
 
-##不可变和可变字符序列使用陷阱
+## 不可变和可变字符序列使用陷阱
 
 ```
 public static void main(String[] args){
