@@ -1456,12 +1456,23 @@ public static void main(String[] args){
 	}
 	
 	long num2  = Runtime.getRuntime().freeMemory();		
-	long time3 = System.currentTimeMillis();
+	long time2 = System.currentTimeMillis();
 	System.out.println("String占用内存 : " + (num2 - num1));
 	System.out.println("String占用内存 : " + (time2 - time1));
 	
 //使用 StringBuilder 进行字符串的拼接
+	StringBuilder sb1 = new StringBuilder("");
+	long num3  = Runtime.getRuntime().freeMemory();		
+	long time3 = System.currentTimeMillis();
 	
-	
-
+	for(int i = 0; i < 5000; i++){
+		sb1.append(i);
+	}
+	long num4  = Runtime.getRuntime().freeMemory();		
+	long time4 = System.currentTimeMillis();
+	System.out.println("String占用内存 : " + (num4 - num3));
+	System.out.println("String占用内存 : " + (time4 - time3));
 }
+```
+
+3/24 (我心态炸了，咋还能保存失败的)
