@@ -1476,3 +1476,46 @@ public static void main(String[] args){
 ```
 > 服务器不稳定呗,可以尝试从今天开始在编译器里写文档,这样就不怕搞丢了.
 3/24 (我心态炸了，咋还能保存失败的)
+
+## 时间处理相关类
+
+时间是一维的，所以，用刻度尺来表示时间的话，每个度量单位是毫秒（1秒的千分之一）。
+
+使用 long 类型的变量来表示时间，从基准时间前后几亿年都能表示。
+
+这个“时刻数值”是所有时间类的核心值，年月日都是根据这个“数值”计算出来的
+
+![L7BG1FCD)T6IG{ 0_3V`9R](https://user-images.githubusercontent.com/110222247/227548725-cdf81c82-cdb4-4606-bef6-72805d489364.png)
+
+## Date 时间类(java.util.Date)
+
+![(B)2J{%IUDOKJU~FF)0RLZ4](https://user-images.githubusercontent.com/110222247/227549424-2192276f-4ada-4df6-9c5f-d020a7d51253.png)
+
+## DateFormat 类和 SimpleDateFormat 类
+
+**DateFormat 类（时间格式化）**
+
+把时间对象转换成指定格式的字符串。反之，把指定格式的字符串转换成时间对象。
+
+**DateFormat 是一个抽象类，一般使用它的子类 SimpleDateFormat 类来实现。**
+
+**例**
+```
+	public static void main(String[] args) throws ParseException{
+	
+	DateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");	//中间符号可变，字母不可变
+	String str = "2049-10-1 10:10:10";	//这里时间格式必须与上面一样
+	Date guoqing100 = format parse(ste);	//这里不抛出去会报错，原因不明
+	
+	System.out.println(guoqing100.getTime());
+	System.out.println(guoqing100));
+	
+	}
+
+```
+
+![QQ图片20230324234108](https://user-images.githubusercontent.com/110222247/227556640-cf812c0c-9d28-4331-879a-5d6c38107e95.png)
+
+![QQ图片20230324234114](https://user-images.githubusercontent.com/110222247/227556664-ac708103-5775-4ca2-ad09-4c2f88a4d863.png)
+
+3/25(IDEA 怎么传进来啊)
