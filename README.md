@@ -1474,5 +1474,5 @@ public static void main(String[] args){
 	System.out.println("String占用内存 : " + (time4 - time3));
 }
 ```
-
+> 服务器不稳定呗,可以尝试从今天开始在编译器里写文档,这样就不怕搞丢了.
 3/24 (我心态炸了，咋还能保存失败的)
