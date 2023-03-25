@@ -1558,7 +1558,14 @@ System.out.println(Math.pow(2,5));	//2的5次方，这里是32
 System.out.println(Math.PI);		//PI是π，3.1415926.....
 System.out.println(Math.E);		//E是自然对数，2.718....
 
-//随机数
-System.out.println(Math.random());	//随机数，这里是0到1之间的一个随机小数
-
 ```
+
+**Random 类**
+
+生成随机数，位于 util包
+
+Random 类的常用方法
+
+![QQ图片20230325234245](https://user-images.githubusercontent.com/110222247/227724190-204ab0c8-82ab-4e7b-a6d2-16bfdd1f3b48.png)
+
+
