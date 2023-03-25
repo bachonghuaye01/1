@@ -1413,8 +1413,6 @@ StringBuilder: 线程不安全，效率高
 
 > 好的,少点也坚持一下每天看一点,超链接的我只是告诉你还有这种方式,具体用哪种更好,要靠自己判断.
 
-<h3 id="2"></h3>
-
 **StringBuilder**
 ```
 StringBuilder sb = new StringBuilder();
@@ -1519,3 +1517,48 @@ public static void main(String[] args){
 ![QQ图片20230324234114](https://user-images.githubusercontent.com/110222247/227556664-ac708103-5775-4ca2-ad09-4c2f88a4d863.png)
 
 3/25(IDEA 怎么传进来啊)
+
+<h3 id="2"></h3>
+
+## Calendar 日历类
+
+Calendar 类是个抽象类，为我们提供了关于日期计算的功能，比如：年，月，日，时，分，秒的展示和计算
+
+GregorianCalender 是 Calender 的子类，表示公历
+
+**注**
+
+一月是0，二月是1，以此类推，12月是11。
+
+星期日是0，星期一是1.以此类推，星期六是6
+
+父类 Calendar 使用常量来表示月份:JANUARY，FEBRUARY 等
+
+## Math 类
+
+**Math**
+
+![QQ图片20230325232715](https://user-images.githubusercontent.com/110222247/227723370-a1bb246d-7f1d-4a46-9b2f-317aac32a67f.png)
+
+```
+
+//取整数相关
+System.out.println(Math.ceil(3.2));	//比3.2大的最小整数，这里是4
+System.out.println(Math.floor(3.2));    //比3.2小的最大整数，这里是3
+System.out.println(Math.round(3.2));    //四舍五入，这里是3
+System.out.println(Math.round(3.8));	//四舍五入，这里是4
+
+//绝对值，开方。a 的 b 次幂等
+System.out.println(Math.abs(-45));	//绝对值，这里是45
+System.out.println(Math.sqrt(64));	//开方，这里是8.0
+System.out.println(Math.pow(5,2));	//5的2次方，这里是25
+System.out.println(Math.pow(2,5));	//2的5次方，这里是32
+
+//Math 类中常用的常量
+System.out.println(Math.PI);		//PI是π，3.1415926.....
+System.out.println(Math.E);		//E是自然对数，2.718....
+
+//随机数
+System.out.println(Math.random());	//随机数，这里是0到1之间的一个随机小数
+
+```
