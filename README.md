@@ -1584,7 +1584,10 @@ File 类的常见构造方法: pubilc File(String pathname)
 
     以 pathname 为路径创建 File 对象，如果 pathname 是相对路径，则默认的当前路径在系统属性 user.dir 中存储
 
-**例**创建文件（输入内容需要 io 流相关知识，现在只是个空文件）
+**例**
+
+创建文件（输入内容需要 io 流相关知识，现在只是个空文件）
+
 ```
 import java.io.File;
 public class TestFile1{
@@ -1612,14 +1615,15 @@ public class TestFile1{
 
 **File 类访问属性的方法列表
 
-！[File类访问属性的方法列表]("C:\Users\60155\Desktop\File类访问属性的方法列表.png")
+![File类访问属性的方法列表](https://user-images.githubusercontent.com/110222247/227786164-f16b0344-16cf-4963-855c-0d400cd14a65.png)
 
 
-**通过 File 对象创建空文件或目录(在该对象所指的文件或目录不存在的情况下)
+**通过 File 对象创建空文件或目录(在该对象所指的文件或目录不存在的情况下)**
 
-**表 File 类创建文件或目录的方法列表
+**表 File 类创建文件或目录的方法列表**
 
-图片
-    
+![表File 类创建文件或目录的方法列表](https://user-images.githubusercontent.com/110222247/227786167-82e9b58c-2774-4811-b265-46d6b95a8ce1.png)
+
+3/27
 
 
