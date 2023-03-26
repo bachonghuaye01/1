@@ -1,8 +1,8 @@
 # 1
 练习
-每天一问
+每天一问[
 
-123sag阿萨德
+]()123sag阿萨德
 
 [跳转至最后](#2)
 
@@ -1571,4 +1571,55 @@ Random 类的常用方法
 ![QQ图片20230325234245](https://user-images.githubusercontent.com/110222247/227724190-204ab0c8-82ab-4e7b-a6d2-16bfdd1f3b48.png)
 
 
-3/25
+3/26
+
+**File 类**
+
+File 类用来代表文件和目录
+
+    java.io.File:代表文件和目录，用于:读取文件，创建文件，删除文件，修改文件。
+
+
+File 类的常见构造方法: pubilc File(String pathname)
+
+    以 pathname 为路径创建 File 对象，如果 pathname 是相对路径，则默认的当前路径在系统属性 user.dir 中存储
+
+**例**创建文件（输入内容需要 io 流相关知识，现在只是个空文件）
+```
+import java.io.File;
+public class TestFile1{
+    public static void main(String[] args) throws Exception{
+        System.out.println(System.getProperty("user.dir"));
+        File f = new File("a.txt");         //相对路径；默认放到 user.dir目录下面
+        f.createNewFile();                  //创建文件
+        File f2 = new File("d:b.txt");      //绝对路径
+        f2.createNewFile();
+        
+        
+    //通过 File 对象可以访问文件的属性
+    System.out.println("File 是否存在:"+f.exists());
+    System.out.println("File 是否是目录:"+f.isDirectory());
+    System.out.println("File 是否是文件:"+f.isFile());
+    System.out.println("File 最后修改时间:"+new Date(f.lastModified()));
+    System.out.println("File 的大小:"+f.length());
+    System.out.println("File 的文件名:"+f.getName);
+    System.out.println("File 的目录路径:"f.getPath);
+    }
+}
+```
+
+**通过 File 对象可以访问文件的属性**
+
+**File 类访问属性的方法列表
+
+！[File类访问属性的方法列表]("C:\Users\60155\Desktop\File类访问属性的方法列表.png")
+
+
+**通过 File 对象创建空文件或目录(在该对象所指的文件或目录不存在的情况下)
+
+**表 File 类创建文件或目录的方法列表
+
+图片
+    
+
+
