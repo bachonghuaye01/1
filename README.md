@@ -1624,6 +1624,8 @@ public class TestFile1{
 
 ![表File 类创建文件或目录的方法列表](https://user-images.githubusercontent.com/110222247/227786167-82e9b58c-2774-4811-b265-46d6b95a8ce1.png)
 
+> 每天完成以后自己检查一下,图片都看不到啊.这些工具类有了解就行,不用每个都这么详细.
+
 3/27
 
 
