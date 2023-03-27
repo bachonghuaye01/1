@@ -1520,7 +1520,6 @@ public static void main(String[] args){
 
 3/25(IDEA 怎么传进来啊)
 
-<h3 id="2"></h3>
 
 ## Calendar 日历类
 
@@ -1572,6 +1571,8 @@ Random 类的常用方法
 
 
 3/26
+
+<h3 id="2"></h3>
 
 **File 类**
 
@@ -1626,6 +1627,94 @@ public class TestFile1{
 
 > 每天完成以后自己检查一下,图片都看不到啊.这些工具类有了解就行,不用每个都这么详细.
 
-3/27
+3/27(你那边看不到吗，那之前的能看见吗？是不是我改了图片名的事，我都能看到才保存的啊)
+
+## 枚举
+
+枚举就是一个一个列举出来
+
+公式
+```
+    enum 枚举名{
+        枚举体(常量列表)
+    }
+    
+```
+
+枚举体就是放置一些常量
+
+所有的枚举类型隐形继承 java.lang.Enum。枚举实质上还是类，而每个被枚举成员实质就是一个枚举类型的实例，默认使用 public static final 修饰。
+
+可以通过枚举类型名来使用
+
+**注**
+
+当需要定义**一组常量**时，可以使用枚举类型
+
+尽量不要用枚举的高级特性，因为高级特性都可以用普通类来实现，没必要搞那么复杂
+
+**测试枚举**
+
+```
+    public static void main(String[] args){
+        // System.out.println(Jijie.SPRING);
+       //打印 
+        // System.out.println(Season.SPRING);
+        
+        //遍历
+            for(Season s:Season.values()){
+                System.out.println(s);
+            }
+            
+ //switch 语句也可以使用枚举
+        
+    }
+    //枚举，用于定义一组常量
+    enum Season{
+        SPRING,SUMMER,AUTUMN,WINTER
+    }
+    //像这样不使用枚举也可以，就是麻烦很多
+    class Jijie{
+        public static final int SPRING = 0;    //这里数字随便填，因为用时输入的是前面的单词
+        public static final int SUMMER = 1;
+        public static final int AUTUMN = 2;
+        public static final int WINTER = 3;
+    
+    }
+
+```
+练习
+
+## 结合递归，打印目录树
+
+```
+public class PrinFileTree{
+
+    public static void main(String[] args){
+           File f = new File(System.getProperty("user.dir"));       //System.getProperty("user.dir") 获得当前路径
+           printFile(f.0);
+    }
+    
+    static void prinFile(File file,int level){   //(打印传进来的信息，level 用来表示第几层)
+        for(int i=0, i<level; i++){
+            System.out.print("-")               //使用 - 来表示层数
+        }
+    //输出文件名
+    System.out.println(file,getName());
+    
+    //如果是目录，继续往下查找文件，如果是文件，停止
+    if(file.osDirectory()){
+        File[] files = file.listFiles();        //  列出他的所有子文件，子目录
+        for(File temp:files){
+            printFile(temp,level+1);            //每调一次说明多一个层次， level+1，多个 -
+        }
+        
+    }
+    
+    
+    }
+    
+}
 
 
+```
