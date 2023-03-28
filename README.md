@@ -1765,7 +1765,8 @@ public class PrinFileTree{
 
 泛型字符可以是然和标识符，但一般采用下图标记
 
-图片
+![QQ图片20230328233128](https://user-images.githubusercontent.com/110222247/228280779-51a472ea-9237-412a-9678-19afcb390a11.png)
+
 
 
 **泛型类**
