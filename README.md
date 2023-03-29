@@ -1837,8 +1837,13 @@ public class Test<T>{
         test.a();
 ```
 这样就会输出string
+
 我理解大多数涉及泛型的情况,可能都是要把数据存储到这里,无论是集合还是类,所以你可以把它理解成
+
 只装橘子的篮子new Basket<Orange>();
+
 只装书的书包new SchoolBag<Book>();
+
 这样应该方便理解一些.
+
 3/28
