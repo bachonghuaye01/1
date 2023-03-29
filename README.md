@@ -1840,9 +1840,9 @@ public class Test<T>{
 
 我理解大多数涉及泛型的情况,可能都是要把数据存储到这里,无论是集合还是类,所以你可以把它理解成
 
-只装橘子的篮子new Basket<Orange>();
+只装橘子的篮子```new Basket<Orange>();```
 
-只装书的书包new SchoolBag<Book>();
+只装书的书包```new SchoolBag<Book>();```
 
 这样应该方便理解一些.
 
