@@ -1805,4 +1805,40 @@ public interface 接口名<泛型表示符号>{
 
 //需不需要详细些做几个例子和练习啊，感觉会挺常用的
 
+> 我对泛型的理解是规定容器里装的东西的类型
+例如
+```new ArrayList<String>()```
+那这个ArrayList中就只能存放字符串对象了.
+但如果是类的话,就会根据泛型的不同,有不同的实现了,例如
+```
+public class Test<T>{
+    private final T t;
+    public Test(T t) {
+    this.t = t;
+    }
+    public void a(){
+        if(t instanceof String){
+            System.out.println("string");
+        }
+        else if(t instanceof Integer){
+            System.out.println("integer");
+        }
+    }
+}
+```
+如果像上面这样定义一个类,并这样调用他.
+```
+        Test test = new Test<Integer>(1);
+        test.a();
+```
+这样就会输出integer
+```
+        Test test = new Test<String>("1");
+        test.a();
+```
+这样就会输出string
+我理解大多数涉及泛型的情况,可能都是要把数据存储到这里,无论是集合还是类,所以你可以把它理解成
+只装橘子的篮子new Basket<Orange>();
+只装书的书包new SchoolBag<Book>();
+这样应该方便理解一些.
 3/28
