@@ -1847,3 +1847,18 @@ public class Test<T>{
 这样应该方便理解一些.
 
 3/28
+
+## 非静态方法(泛型)
+
+**语法**
+
+```
+public <泛型表示符> void getName(泛型表示符号 name){
+
+}
+
+public <泛型表示符号> 泛型表示符号 getName (泛型表示符号 name){
+
+}
+
+3/29
