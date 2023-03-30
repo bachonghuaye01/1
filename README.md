@@ -1846,9 +1846,13 @@ public class Test<T>{
 
 这样应该方便理解一些.
 
+//相当于给箱子贴标签，平时只往里放指定种类的东西，拿出去时会撕掉标签，但里面东西是不变的。这么理解可以吧
+
 3/28
 
 ## 非静态方法(泛型)
+
+非静态方法可以通过泛型类或泛型方法来使用泛型
 
 **语法**
 
@@ -1860,5 +1864,73 @@ public <泛型表示符> void getName(泛型表示符号 name){
 public <泛型表示符号> 泛型表示符号 getName (泛型表示符号 name){
 
 }
+```
+
+返回值类型会由自行判断，不必特意使用<>指定
 
 3/29
+
+## 静态方法
+
+静态方法只能通过泛型方法的方式来使用泛型
+
+**语法**
+```
+public static <泛型表示符号> void getName (泛型表示符号 name){
+
+}
+
+---
+
+public static <泛型表示符号> void getName (泛型表示符号 name){
+
+}
+
+```
+
+**例，定义一个静态泛型方法**
+
+```
+public static <T> void setName (T name){
+	System.out.println(name);
+
+}
+
+public static <T> void getName (T name){
+	return name;
+}
+
+```
+
+## 泛型方法与可变参数
+
+在泛型方法中，泛型也可以定义可变参数类型
+
+**语法**
+
+```
+public <泛型表示符号> void showMsg (泛型表示符号... args){
+
+}
+
+```
+
+**例：在泛型方法中定义一个可变参数**
+
+```
+public <T> void showMsg (T...args){
+	for(T t:args){
+		System.out.println(t);
+	}
+}
+
+```
+***使用上方定义的的可变参数***
+	public static void main(String[] args){
+		MethodGeneric methodGeneric = new MethodGeneric();	//MethodGeneric 意为：通用方法
+		String[] arr new String[]{"a","b","c"}:			//arr 意为：自动调整
+		methodGeneric.method(arr):
+			
+	}
+
+```
