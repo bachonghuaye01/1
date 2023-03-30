@@ -1857,6 +1857,8 @@ public <T> void showMsg (T...args){
 
 ```
 ***使用上方定义的的可变参数***
+
+```
 	public static void main(String[] args){
 		MethodGeneric methodGeneric = new MethodGeneric();	//MethodGeneric 意为：通用方法
 		String[] arr new String[]{"a","b","c"}:			//arr 意为：自动调整
