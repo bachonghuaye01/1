@@ -2,11 +2,11 @@
 练习
 每天一问[
 
-]()123sag阿萨德
-
-[跳转至最后](#2)
 
 [Java视频链接](https://www.bilibili.com/video/BV1qL411u7eE/?vd_source=1ab487dfeeaaca5ba8f4e0a6343d7b8e)
+
+[Java视频链接2](https://www.bilibili.com/video/BV1oy4y1H7R6?p=171&spm_id_from=pageDriver&vd_source=1ab487dfeeaaca5ba8f4e0a6343d7b8e)p168-
+
 
 > 给问题附加超链接的格式[文字描述](超链接地址)
 
@@ -1571,8 +1571,6 @@ Random 类的常用方法
 
 
 3/26
-
-<h3 id="2"></h3>
 
 **File 类**
 
