@@ -1869,11 +1869,12 @@ public <T> void showMsg (T...args){
 ```
 
 **注**：泛型不会考虑继承关系
+
 3/31
 
 ## 通配符和上下限定
 
-无界通配符
+**无界通配符**
 
 "?"表示类型通配符，用于代替具体的类型，他只能在"<>"中使用，可以解决当具体类型不确定的问题
 
@@ -1888,7 +1889,7 @@ public void showFlag(Generic<?> generic){
 
 ```
 
-*统配符的上线限定*
+**通配符的上线限定**
 
 因为通配符的适用范围太广，需要对使用范围进行限定
 
@@ -1907,7 +1908,7 @@ public void showFlag(Generic<? extends Number> generic){
 
 ```
 
-*通配符的下限限定*
+**通配符的下限限定**
 
 下限使用 super 关键字进行限定
 
@@ -1950,7 +1951,7 @@ public void showFlag(Generic<? super Integer>) generic{
 
 基于数组不能满足对于"管理和组织数据的需求"，需要更强大，更灵活，且容量随时可扩的容器来装载对象。
 
-便产生了**容器(Collection) 也称之为集合。
+便产生了 **容器(Collection)** 也称之为集合。
 
 4/1
 
