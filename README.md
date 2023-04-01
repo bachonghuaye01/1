@@ -1955,4 +1955,24 @@ public void showFlag(Generic<? super Integer>) generic{
 
 4/1
 
+## 容器的结构
 
+![0HK2WQT4EDTHIO`VCO7E(7G](https://user-images.githubusercontent.com/110222247/229311050-29215563-33d2-4ddc-abe7-e5de29040264.png)
+
+左边是单例集合， Collection 接口定义了单例集合的一些基本行为。而它的子接口 List 接口和 Set 接口则进一步定义了它的存储特征。两个子接口也分别有各自的接口实现类
+
+右侧是双例集合，在数据存储时要求数据的特征必须要具备 k-v 的结构。在 Map 接口中定义了双例集合的一些基本行为，再由其他的接口实现类来进行进一步的实现，
+
+**单例集合**
+
+单例集合：将数据一个一个的进行存储
+
+![VE)COQ5 CAA@WVT08DPU)9Q](https://user-images.githubusercontent.com/110222247/229311371-2517441f-9afd-40e7-b847-36329f95f89c.png)
+
+**双例集合**
+
+双例集合：基于 Key 与 Value 的结构存储数据
+
+![FX2INTUTM%_XJE_BV(PUG(D](https://user-images.githubusercontent.com/110222247/229311487-f809cbd2-eb77-4edf-a8ff-17bec6a5bb21.png)
+
+函数：对于每个自变量 x 有唯一的变量 y 与之对应
