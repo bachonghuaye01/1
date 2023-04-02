@@ -1976,3 +1976,116 @@ public void showFlag(Generic<? super Integer>) generic{
 ![FX2INTUTM%_XJE_BV(PUG(D](https://user-images.githubusercontent.com/110222247/229311487-f809cbd2-eb77-4edf-a8ff-17bec6a5bb21.png)
 
 函数：对于每个自变量 x 有唯一的变量 y 与之对应
+
+4/2
+
+**Collection 接口**
+
+collection 是单例集合根接口，它是集中，收集的意思。Collection 接口的两个子接口是 List，Set 接口
+
+**Collection 接口中的抽象方法**
+
+图片
+
+由于 LIst，Set 是 Collection 的子接口，意味着所有 List，Set 的实现类都有上面的方法
+
+**List 接口**
+
+1. 有序：元素存入集合的顺序和取出的顺序是一致的。List 中每个元素都有索引标记，可以根据元素的索引标记在 LIst中的位置来访问元素，从而精准控制这些元素
+
+2. 可重复：List 允许加入重复的元素。更确切的讲，List 通常允许满足 e1.equals(e2) 的元素重复加入容器
+
+**List 的常用方法**
+
+除了Collection 接口中的方法，List 多了一些跟顺序有关的方法
+
+
+图片
+
+
+**ArrayList 容器类**
+
+ArrayList 是 List 接口的实现类，是 List 存储特征(有序，允许重复)的具体实现
+
+ArrayList 底层是用数组实现的存储，特点：查询效率高，增删效率低，线程不安全(多线程中)
+
+
+**向 ArrayList 容器中添加元素**
+
+**例**
+
+```
+public class ArrayListTest
+    public static void main (String[] arges){
+        //实例化 ArrayList 容器
+        List<String> list = new ArrayList<>();       //list 是有泛型的，是泛型接口，这里通过泛型指定存储 String（字符串） 类型
+        
+        //添加元素
+        boolean flag = list.add("qiao");          //因为方法有返回值，所以返回了boolean
+        boolean flag2 = list.add("mu");
+        System.out.println(flag);
+        
+        //add 方法在添加元素时，添加成功则返回 true
+        //由于当前 list 容器是用 List 接口来修饰的，所以可以调用 List 接口下的方法
+         
+         
+         list.add(index:1,element:"wo"); //(int index, String element)根据指定的下标或者说索引，来完成元素的添加
+         
+         //索引的数值可以等于，但不能大于元素的个数，这里 index：1 是在作为 0 的 flag 和作为 1 的 flag2之间所以没问题
+         //但如果更改为 index:3 大于元素个数就会报错，"数组下标越界"
+         
+         
+         //获取元素
+         System.out.println(list,get(0));       //返回的是 qiao
+         System.out.println(list,get(1));       //返回的是 wo，因为在后面把 wo 添加到了1的位置，导致 mu 后移了一位
+         System.out.println(list,get(2));       //返回的是 mu
+         //这里 get(3) 同样会报错，原因为越界
+         
+         //通过 for循环 来获取集合中所有元素
+         //通过 size();方法 来返回集合中元素个数
+         for(int i=0; i<list.size(); i++){
+            System.out.println(list,get(i)); 
+         }
+             
+         
+    }
+    
+```
+
+**从 ArrayList 容器中获取元素**
+
+**语法**
+
+**get**
+```
+    E get(int index)
+```
+
+返回此列表中指定位置的元素
+
+- 参数
+    index - 要返回的元素的索引
+- 结果
+    该列表中指定位置的元素
+  - 异常
+      IndexOutOfBoundsException(数组下标越界) - 如果索引超出范围 ( index < 0 || index >= size() ) 
+    //size 返回的是元素的个数，所以大于它便会越界
+
+
+**size**
+
+```
+    int size()
+```
+
+返回此列表中的元素个数，如果此列表包含超过 Integer,MAX_VALUE(整型的最大值) 个元素，则返回 Integer,MAX_VALUE
+
+
+
+
+4/3
+
+
+
+
+
