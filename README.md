@@ -1985,7 +1985,8 @@ collection 是单例集合根接口，它是集中，收集的意思。Collectio
 
 **Collection 接口中的抽象方法**
 
-图片
+![HMHY{TMHPDRLT%ULO6`{2%1](https://user-images.githubusercontent.com/110222247/229360239-c7e5ad6b-9b45-41b2-82a2-dd28e4a92736.png)
+
 
 由于 LIst，Set 是 Collection 的子接口，意味着所有 List，Set 的实现类都有上面的方法
 
@@ -1999,8 +2000,7 @@ collection 是单例集合根接口，它是集中，收集的意思。Collectio
 
 除了Collection 接口中的方法，List 多了一些跟顺序有关的方法
 
-
-图片
+![QAQBKZNV3P9E~~1RV4BJ Z5](https://user-images.githubusercontent.com/110222247/229360248-94cc6cf0-b7cc-425c-a20f-85dacc01e330.png)
 
 
 **ArrayList 容器类**
