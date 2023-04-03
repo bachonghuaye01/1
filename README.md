@@ -2046,8 +2046,15 @@ public class ArrayListTest
          for(int i=0; i<list.size(); i++){
             System.out.println(list,get(i)); 
          }
-             
          
+	 //删除元素
+         String value = list.remove(index:1);
+	 System.out.println(value);
+	 
+	 for(int i=0; i<list.size(); i++){
+	 	System.out.println(list.get(i));
+	 }
+	 
     }
     
 ```
@@ -2085,7 +2092,32 @@ public class ArrayListTest
 
 4/3
 
+**删除元素**
+
+**remove**
+```
+E remove(int index)
+```
+
+这个列表中删除指定位置的元素(可选操作)。任何后续元素转移到左(减去一个来自他们的指标)。返回的元素从列表中删除。
+
+参数
+
+index-删除元素的索引
+
+结果
+
+以前在指定位置的元素
+
+**删除指定元素**
+
+**remove**
+
+```
+boolean remove(Object 0)
+```
+
+从这个列表中删除第一次出现的指定元素（如果它存在）。如果列表不包含元素，他是不变的
 
 
-
-
+4/4
