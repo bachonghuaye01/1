@@ -2047,13 +2047,39 @@ public class ArrayListTest
             System.out.println(list,get(i)); 
          }
          
-	 //删除元素
+	 //根据索引位置删除元素
          String value = list.remove(index:1);
 	 System.out.println(value);
 	 
 	 for(int i=0; i<list.size(); i++){
 	 	System.out.println(list.get(i));
 	 }
+	 //删除指定元素
+	 boolean flag3 = list.remove(o:mu);
+	 System.out.println(flag3);
+	 for(int i=0: i<list.size():i++){
+	    System.out.println(list.get(i));
+	 }
+	 //替换元素
+	 String val = list.set(0,"kiaoboku");
+	 System.out.println(val);
+	 for(int i=0; i<list.size(); i++){
+	 	System.out.println(list.get(i));
+	 
+	 //清空容器	
+	 list.clear();
+	 System.out.println(list.size());       //返回 0
+	 
+	 //判断容器是否为空
+	 //list.add("wo")           //如果像这样加入元素，容器不为空就会返回 false
+	 boolean flag4 = list.isEmpty();
+	 System.out.println(flag4);             //因为之前清空了容器，所以返回trun
+	 
+	 //判断容器是否为空
+	 boolean flag5 = list.contains("wo");
+	  System.out.println(flag5);            //因为包含指定的 wo 元素，所以返回 true
+	 
+	 
 	 
     }
     
@@ -2121,3 +2147,51 @@ boolean remove(Object 0)
 
 
 4/4
+
+**替换元素**
+
+**set**
+
+```
+    E set(int index,
+        E element)
+```
+
+取代在指定位置上的元素在这个列表指定的元素(可选操作)
+
+**清空容器**
+
+**clear**
+
+```
+void clear()
+```
+
+从这个列表删除所有元素(可选操作)，这个调用返回后的列表是空的
+
+
+**判断容器是否为空**
+
+**isEmpty**
+```
+boolean isEmpty()
+```
+
+如果该列表不包含任何元素，返回 true 否则返回false
+
+**判断容器中是否包含指定元素**
+
+**contains**
+
+```
+boolean contains(Object 0)
+```
+
+如果该列表包含指定的元素，返回 true 否则返回false
+
+4/5
+
+
+
+
+
