@@ -2079,6 +2079,16 @@ public class ArrayListTest
 	 boolean flag5 = list.contains("wo");
 	  System.out.println(flag5);            //因为包含指定的 wo 元素，所以返回 true
 	 
+	 //查找元素在容器中的位置
+	 
+	 //indexOf 方法返回的是元素在容器中第一次出现的位置
+	 int index = list.indexOf("qiao");
+	 System.out.println(index);
+	 
+	 //lastIndexOf 方法返回的是元素在容器中第一次出现的位置
+	 //如果元素不存在，则返回 -1
+	 int index = list.lastIndexOf("qiao");
+	 System.out.println(index);
 	 
 	 
     }
@@ -2191,7 +2201,23 @@ boolean contains(Object 0)
 
 4/5
 
+**查找元素的位置**
 
+**查找元素第一次出现的位置**
 
+**indexOf**
 
+```
+int indexOf(Object 0)
 
+返回第一次出现的指定位置的索引列表
+
+**查找元素最后一次出现的位置**
+
+**lastlndexOf**
+
+```
+int lastIndexOf(Object)
+```
+
+返回最后出现的指定元素的索引列表
