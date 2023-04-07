@@ -2079,6 +2079,7 @@ public class ArrayListTest
 	 boolean flag5 = list.contains("wo");
 	  System.out.println(flag5);            //因为包含指定的 wo 元素，所以返回 true
 	 
+	 
 	 //查找元素在容器中的位置
 	 
 	 //indexOf 方法返回的是元素在容器中第一次出现的位置
@@ -2091,6 +2092,30 @@ public class ArrayListTest
 	 System.out.println(index);
 	 
 	 
+	 //将单例集合转换成数组
+	 
+	  for(int i=0; i<list.size(); i++){
+            System.out.println(list,get(i)); 
+         }
+         
+     //将 ArrayList 转换为 Object[]
+     //但是不能将转换的数组做强制类型转换
+     Object[] arr = list.toArray();
+     for(int i=0; i<arr.length; i++){
+          String str = (String)arr[i];  //在迭代的时候强转类型
+          System.out.println(str);
+     
+     //将单例集合转换为指定类型的数组
+     //类型需要参考泛型中的类型
+     String[] arr2 = list.toArray(new String[list.size()]);        //根据泛型类型进行数组的转换
+     for(int i=0; i<arr2.length; i++){          //因为是根据泛型转的这里不需要强转了
+          System.out.println(arr2[i]);
+     }
+     
+     
+     
+     }
+     
     }
     
 ```
@@ -2209,7 +2234,7 @@ boolean contains(Object 0)
 
 ```
 int indexOf(Object 0)
-
+```
 返回第一次出现的指定位置的索引列表
 
 **查找元素最后一次出现的位置**
@@ -2221,3 +2246,59 @@ int lastIndexOf(Object)
 ```
 
 返回最后出现的指定元素的索引列表
+
+4/7
+
+练习：删除id为3的person对象
+```
+    public class Main {
+        public static void main(String[] args) {
+            ArrayList<String> list = new ArrayList<>();
+            boolean person = list.add("eye");
+            boolean person1 = list.add("nose");
+            boolean person2 = list.add("mouth");
+            boolean person3 = list.add("hair");
+
+            for(int i=0; i<list.size(); i++){
+            System.out.println(list.get(i));
+            }
+
+            System.out.println(person);
+
+            System.out.println("---------------------------------------");
+            person3 = list.remove("hair");
+            System.out.println(person3);
+            for(int i=0; i<list.size(); i++){
+                System.out.println(list.get(i));
+            }
+
+        }
+
+    }
+```
+
+## 将单例集合转换成数组
+
+**转换为 Object 数组**
+
+**toArray**
+
+```
+Object[] toArray()
+```
+名叫 toArray 抽象方法不需要任何参数，它会返回一个 Object 的数组类型返回值，
+
+可以将一个单例集合转换成 Object 数组.
+
+**转换泛型类型数组**
+
+**toArray**
+
+```
+<T> T[] toArray(T[] a)
+```
+同样可以将单例集合转换成数组，与转换成 Object 的数组不同，转换成泛型的数组是有参数的，
+
+他是一个泛型类型的参数，返回的是一个泛型类型的数组
+
+
