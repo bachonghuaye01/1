@@ -2178,10 +2178,11 @@ public class ArrayListTest
     
 ```
 
-**从 ArrayList 容器中获取元素**
+## 从 ArrayList 容器中获取元素
 
 **语法**
 
+## 返回此列表中指定位置的元素
 **get**
 ```
     E get(int index)
@@ -2197,6 +2198,7 @@ public class ArrayListTest
       IndexOutOfBoundsException(数组下标越界) - 如果索引超出范围 ( index < 0 || index >= size() ) 
     //size 返回的是元素的个数，所以大于它便会越界
 
+## 返回此列表中的元素个数
 
 **size**
 
@@ -2211,7 +2213,7 @@ public class ArrayListTest
 
 4/3
 
-**删除元素**
+## 删除元素
 
 **remove**
 ```
@@ -2228,7 +2230,7 @@ index-删除元素的索引
 
 以前在指定位置的元素
 
-**删除指定元素**
+## 删除指定元素
 
 **remove**
 
@@ -2241,7 +2243,7 @@ boolean remove(Object 0)
 
 4/4
 
-**替换元素**
+## 替换元素
 
 **set**
 
@@ -2252,7 +2254,7 @@ boolean remove(Object 0)
 
 取代在指定位置上的元素在这个列表指定的元素(可选操作)
 
-**清空容器**
+## 清空容器
 
 **clear**
 
@@ -2263,7 +2265,7 @@ void clear()
 从这个列表删除所有元素(可选操作)，这个调用返回后的列表是空的
 
 
-**判断容器是否为空**
+## 判断容器是否为空
 
 **isEmpty**
 ```
@@ -2272,7 +2274,7 @@ boolean isEmpty()
 
 如果该列表不包含任何元素，返回 true 否则返回false
 
-**判断容器中是否包含指定元素**
+## 判断容器中是否包含指定元素
 
 **contains**
 
@@ -2284,7 +2286,7 @@ boolean contains(Object 0)
 
 4/5
 
-**查找元素的位置**
+## 查找元素的位置
 
 **查找元素第一次出现的位置**
 
