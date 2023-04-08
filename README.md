@@ -2113,6 +2113,64 @@ public class ArrayListTest
      }
      
      
+     //容器的并集操作
+     
+     List<String> a = new ArrayList<>();
+     a.add("a");
+     a.add("b");
+     a.add("c");
+     
+     List<String> b = new ArrayList<>();
+     b.add("b");
+     b.add("c");
+     b.add("d");
+     
+     //用a并b
+     boolean flag6 = a.addAll(b);
+     System.out.println(flag6);
+     for(String str:a){         //从集合中取出每一个元素赋予变量 str
+        System.out.println(str);
+     }
+     
+     //容器的交集操作
+     
+     List<String> a1 = new ArrayList<>();
+     a1.add("a");
+     a1.add("b");
+     a1.add("c");
+     
+     List<String> b1 = new ArrayList<>();
+     b1.add("b");
+     b1.add("c");
+     b1.add("d");
+     
+     boolean flag7 = a1.retainAll(b1);
+     System.out.println(flag7);
+     for(String str:a1){
+        System.out.println(str);
+     }
+     
+     //容器的差集操作
+     //a2差集b2
+     List<String> a2 = new ArrayList<>();
+     a1.add("a");
+     a1.add("b");
+     a1.add("c");
+     
+     List<String> b2 = new ArrayList<>();
+     b1.add("b");
+     b1.add("c");
+     b1.add("d");
+     
+     boolean flag8 = a2.removeAll(b2);
+     System.out.println(flag8);
+     for(String str:a2){
+        System.out.println(str);
+     }
+     
+     
+     
+     
      
      }
      
@@ -2302,3 +2360,62 @@ Object[] toArray()
 他是一个泛型类型的参数，返回的是一个泛型类型的数组
 
 4/8
+
+## 容器的并集操作
+
+**addAll**
+
+```
+boolean addAll(Collection<? extends E> C)
+```
+
+并集指将两个集合相加起来，名为 addAll 的抽象方法就是用来完成并集操作的方法
+
+addAll 方法的参数类型是实现了 Collection 接口的类型才可以，
+
+boolean 用来判断，并集成功返回 true，失败返回 false
+
+在进行并集处理时两个集合中不能有空的集合(必须要有元素)
+
+## 容器的交集操作
+
+**retainAll**
+
+```
+boolean retainAll(Collection<?> c)
+```
+
+交集指两个集合a和b的交集，是含有所有即属于a又属于b且没有其他元素的集合
+
+也就是只取两个集合相同部分
+
+为了达成交集定义了名为 retainAll 的抽象方法，
+
+同样需要实现了 Collection 接口的对象，返回一个 boolean类型。成功返回 true，失败返回 false
+
+## 容器的差集操作
+
+**removeAll**
+
+```
+boolean removeAll(Collection<?> c)
+```
+
+差集，把两个容器中相同的去掉
+
+为了达成差集定义了名为 removeAll 的抽象方法
+
+同样需要实现了 Collection 接口的对象，返回一个 boolean类型。成功返回 true，失败返回 false
+
+
+
+
+
+
+
+
+
+
+
+
+
