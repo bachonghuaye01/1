@@ -2409,12 +2409,26 @@ boolean removeAll(Collection<?> c)
 
 同样需要实现了 Collection 接口的对象，返回一个 boolean类型。成功返回 true，失败返回 false
 
+4/9
+
+## ArrayLis 源码分析
+
+**ArrayList 底层存储方式**
+
+ArrayList 底层是用数组实现的存储
+
+```
+Default initial capacity 		//默认初始容量
+```
+
+Ctrl+鼠标点击类的名字 可以进入类
+
+Ctrl+Alt+鼠标点击 可以进入该方法具体实践的一些类
 
 
+这段来回跳没太看懂
 
-
-
-
+4/10
 
 
 
