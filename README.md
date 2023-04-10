@@ -2430,6 +2430,47 @@ Ctrl+Alt+鼠标点击 可以进入该方法具体实践的一些类
 
 4/10
 
+# Vector 容器类
+
+Vector 底层是用数组实现的，相关的方法都加了同步检查，因此"线程安全，效率低"。
+
+** Vector 的使用
+
+**Vector 的使用与 ArrayList 是相同的**，因为他们都实现了 List 接口，对 List 接口中的抽象方法做了具体实现
+
+```
+
+//实例化 Vector
+
+List<String> v = new Vector<>;
+
+v.add("a");
+V.add("b");
+V.add("a");
+
+for(int i=0; i<v.size(); i++){
+    System.out.println(v.get(i));
+}
+for(String str:v){
+    System.out.println(str):
+}
+
+
+```
+
+**Vector 源码分析**
+
+这源码分析完全看不懂啊，倒是明白他想让我知道工作原理，但有的不认识，有的学过但忘了，导致不懂得段落太多整个支离破碎了
+
+我是自己找点东西硬看多看看还是先跳过这段之后再来看好些啊
+
+
+
+
+
+
+
+
 
 
 
