@@ -2465,10 +2465,121 @@ for(String str:v){
 我是自己找点东西硬看多看看还是先跳过这段之后再来看好些啊
 
 
+4/12
+
+**Stack 容器**
+
+Stack栈容器，是 Vector 的一个子类，它实现了一个标准的后进先出(LIFO:Last In Frist Out)的栈
+
+**Stack 特点**
+
+后进先出，它通过5个操作方法队 Vector 进行扩展，允许将向量视为堆栈
+
+操作栈的方法
+
+图片
 
 
+**Stack 的使用**
+
+基于栈的操作永远是从栈顶开始，也是最后加入的元素
+
+```
+    public class StackTest {
+            public static void main(String[] args) {
+            
+            //实例化容器
+            Stack<String> stack = new Stack<>();
+            
+            //将元素添加到栈容器中
+            stack.push("a");
+            stack.push("b");
+            stack.push("c");
+            
+            //判断栈容器是否为空
+             System.out.println(stack.empty());     //这时还有元素，返回 false
+            
+            //查看栈顶元素
+            System.out.println(stack.peek());       //peek 就纯看，不影响其他的
+            
+            //返回元素在栈容器中的位置
+            System.out.println(stack.search("a"));  //返回 3，因为从栈顶开始，也就是说c=1， b=2， a=3
+            
+            
+            //获取栈容器中的元素
+            String p1 = Stack.pop();        //使用 pop 取出后会删除原本的元素
+            System.out.println(p1);
+            String p2 = Stack.pop();
+            System.out.println(p1);
+            String p3 = Stack.pop();
+            System.out.println(p1);         //顺序是c，b，a，与添加顺序相反
+            
+            System.out.println(stack.empty());      //这时元素已经被取出，容器为空，返回 true
+                        
+            
+            }
+            
+    }
 
 
+```
+
+**Stack 的使用案例**
+
+```
+//匹配符号的对称性
+
+    public void symmetry(){
+        String str = "...{.....[....(....)...]....}..(....)..[...]...";
+        
+        //实例化Stack
+        Stack<String> stack = new Stack<>();
+        
+        //假设修正法     //先假设都匹配，再逐渐修正
+        boolean flag = true;    //假设是匹配度
+        //拆分字符串获取字符
+        for(int i=0; i<str.length(); i++){
+            char c = str.charAt(i);
+            if(c =='{'){
+                stack.push("}");        
+            }
+            if(c =='['){
+                stack.push("]");
+            }
+            if(c =='('){
+                stack.push(")");
+            }
+            //如果是左侧的直接向栈中添加一个右括号
+            
+            
+            //判断符号是否匹配
+            if(c == '}' || c == ']' || c == ')'){
+                if(srack.empty()){  
+                    //修正处理        
+                    flag = false;           //如果为空，说明右括号里没有与之对应的左括号
+                    break;                  //如果没有对应则说明不对称，直接跳出循环               
+                }
+               
+                String x =  stack.pop();    //因为 c 是字符，所以需要将字符串转成字符才能对比
+                if(x.charAt(0) !=c){        //如果右括号与左侧相等就是匹配，如果不等
+                    //修正处理 
+                    flag = false;           //容器为空
+                    break;                  //不匹配，返回  
+                }
+            
+            }
+
+        }
+        if(!stack.empty()){     //如果 stack 为空，说明投入的元素都弹出去了，结果为对称
+            flag = false;       //如果不为空，有元素说明有多余元素，不对称
+        }
+
+    }
+
+```
+
+
+4/13
 
 
 
