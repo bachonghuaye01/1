@@ -2309,7 +2309,7 @@ int lastIndexOf(Object)
 
 4/7
 
-## 练习：删除id为3的person对象
+# 练习：删除id为3的person对象
 ```
 public class Person {
 
