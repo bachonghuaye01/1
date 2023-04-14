@@ -2309,33 +2309,98 @@ int lastIndexOf(Object)
 
 4/7
 
-练习：删除id为3的person对象
+## 练习：删除id为3的person对象
 ```
-    public class Main {
-        public static void main(String[] args) {
-            ArrayList<String> list = new ArrayList<>();
-            boolean person = list.add("eye");
-            boolean person1 = list.add("nose");
-            boolean person2 = list.add("mouth");
-            boolean person3 = list.add("hair");
+public class Person {
 
-            for(int i=0; i<list.size(); i++){
-            System.out.println(list.get(i));
-            }
+    private int id;
+    private String name;
+    private int age;
 
-            System.out.println(person);
+    public void ren() {
+        System.out.println("Person.ren");
+        System.out.println(id);
+        System.out.println(name);
+        System.out.println(age);
+    }
 
-            System.out.println("---------------------------------------");
-            person3 = list.remove("hair");
-            System.out.println(person3);
-            for(int i=0; i<list.size(); i++){
-                System.out.println(list.get(i));
-            }
+    private class person1 {
+        private int id = 0;
 
+        private String name = "jack";
+        private int age = 20;
+
+        public void ren() {
+            System.out.println("Inner.ren");
+            System.out.println(id);
+            System.out.println(name);
+            System.out.println(age);
         }
+    }
+    private class person2 {
+        private int id = 1;
+
+        private String name = "tanaka";
+        private int age = 21;
+
+        public void ren() {
+            System.out.println("Inner.ren");
+            System.out.println(id);
+            System.out.println(name);
+            System.out.println(age);
+        }
+    }
+    private class person3 {
+        private int id = 2;
+
+        private String name = "yamada";
+        private int age = 22;
+
+        public void ren() {
+            System.out.println("Inner.ren");
+            System.out.println(id);
+            System.out.println(name);
+            System.out.println(age);
+        }
+    }
+    private class person4 {
+        private int id = 3;
+
+        private String name = "satou";
+        private int age = 23;
+
+        public void show() {
+            System.out.println("Inner.show");
+            System.out.println(id);
+            System.out.println(name);
+            System.out.println(age);
+        }
+    }
+
+
+}
+
+```
+
+```
+public class ArrayList {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList1<>();
+        //java: 无法推断ArrayList1的类型参数
+        //  原因: 无法将 '<>' 与非泛型类ArrayList1一起使用
+        boolean id = list.add("Person.this.id");
+        boolean name = list.add("Person.this.name");
+        boolean age = list.add("Person.this.age");
 
     }
+
+
+}
 ```
+这里报错不知道怎么解决，也不知道怎么将Person添加进来，在这里卡住了
+
+感觉之前的东西跟没学过一样，啥都是现找的
+
 
 ## 将单例集合转换成数组
 
@@ -2511,12 +2576,12 @@ Stack栈容器，是 Vector 的一个子类，它实现了一个标准的后进�
             String p1 = Stack.pop();        //使用 pop 取出后会删除原本的元素
             System.out.println(p1);
             String p2 = Stack.pop();
-            System.out.println(p1);
+            System.out.println(p2);
             String p3 = Stack.pop();
-            System.out.println(p1);         //顺序是c，b，a，与添加顺序相反
-            
+            System.out.println(p3);         //顺序是c，b，a，与添加顺序相反
+         
             System.out.println(stack.empty());      //这时元素已经被取出，容器为空，返回 true
-                        
+                  
             
             }
             
@@ -2620,4 +2685,6 @@ public static void main(String[] args) {
 
 
 ```
+
+
 
