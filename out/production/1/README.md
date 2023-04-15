@@ -2383,31 +2383,24 @@ public class Person {
 ```
 
 ```
-    public class ArrayList {
-        public static void main(String[] args) {
-            ArrayList<String> list = new ArrayList<>();
-            boolean person = list.add("eye");
-            boolean person1 = list.add("nose");
-            boolean person2 = list.add("mouth");
-            boolean person3 = list.add("hair");
-
-            for(int i=0; i<list.size(); i++){
-            System.out.println(list.get(i));
-            }
-
-            System.out.println(person);
-
-            System.out.println("---------------------------------------");
-            person3 = list.remove("hair");
-            System.out.println(person3);
-            for(int i=0; i<list.size(); i++){
-                System.out.println(list.get(i));
-            }
-
-        }
+public class ArrayList {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList1<>();
+        //java: 无法推断ArrayList1的类型参数
+        //  原因: 无法将 '<>' 与非泛型类ArrayList1一起使用
+        boolean id = list.add("Person.this.id");
+        boolean name = list.add("Person.this.name");
+        boolean age = list.add("Person.this.age");
 
     }
+
+
+}
 ```
+这里报错不知道怎么解决，也不知道怎么将Person添加进来，在这里卡住了
+
+感觉之前的东西跟没学过一样，啥都是现找的
+
 
 ## 将单例集合转换成数组
 

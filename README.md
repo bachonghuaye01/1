@@ -2686,5 +2686,148 @@ public static void main(String[] args) {
 
 ```
 
+4/15
+
+练习
+```
+public class Person {
+    private int id;
+    private String name;
+    private int age;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
 
 
+```
+
+```
+import java.util.ArrayList;
+
+public class a1 {
+        public static void main(String[] args) {
+            Person jack = new Person();
+            //类名 对象名 = 生成对象 ()为空构造器,构造器默认存在;
+            jack.setId(0);
+            jack.setName("jack");
+            jack.setAge(21);
+
+
+            Person tom = new Person();
+            tom.setId(1);
+            tom.setName("tom");
+            tom.setAge(22);
+
+            Person john = new Person();
+            john.setId(2);
+            john.setName("john");
+            john.setAge(23);
+
+            Person jerry = new Person();
+            jerry.setId(3);
+            jerry.setName("jerry");
+            jerry.setAge(24);
+
+            Person David = new Person();
+            David.setId(4);
+            David.setName("David");
+            David.setAge(25);
+
+            ArrayList<Person> personList = new  ArrayList<>();
+            personList.add(jack);
+            personList.add(tom);
+            personList.add(john);
+            personList.add(jerry);
+            personList.add(David);
+
+            for (int i = 0; i < personList.size()-1; i++){
+                if (personList.get(i).getId()==3){
+                    personList.remove(personList.get(i));
+
+                }
+
+            }
+
+            for (Person person:
+                personList){
+                System.out.println("ID"+person.getId()+"NAME"+person.getName()+"AGE"+person.getAge());
+            }
+
+                }
+
+            }
+
+```
+
+**报错的**
+
+```
+import java.util.ArrayList;
+
+public class pxh {
+
+        public static void main(String [] args){
+            Person jack = new Person ();
+            jack.setId(0);
+            jack.setName("jack");
+            jack.setAge(20);
+            Person tom = new Person ();
+            tom.setId(1);
+            tom.setName("tom");
+            tom.setAge(20);
+            Person john = new Person ();
+            john.setId(2);
+            john.setName("john");
+            john.setAge(20);
+
+            ArrayList<Person> personList = new ArrayList<>();
+            personList.add(jack);
+            personList.add(tom);
+            personList.add(john);
+
+            for (Person person:personList) {
+                if (person.getId()==0){
+                    personList.remove(person);
+                }
+
+            }
+            for (Person person:
+                    personList) {
+                System.out.println("ID:"+person.getId()+"NAME:"+person.getName()+"AGE:"+person.getAge());
+            }
+        }
+    }
+
+//错误信息
+
+Exception in thread "main" java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
+	at java.util.ArrayList$Itr.next(ArrayList.java:861)
+	at pxh.main(pxh.java:24)
+
+Process finished with exit code 1
+
+```
+额..他确实报错了，但这是啥意思啊
