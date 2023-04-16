@@ -2680,15 +2680,69 @@ public static void main(String[] args) {
 		System.out.println(str);
 	}
 	
+	
+	//LinkedList
+	
+	//addFirst(E e)
+	/*LinkedList<String> linkedList = new LinkedList<>();
 
-}	
+	linkedList.addFirst(e:"a");
+	linkedList.addFirst(e:"b");
+	linkedList.addFirst(e:"c");
+	for(String str:linkedList){
+		System.out.println(str);
+}*/		//结果为 c b a
+
+	//addLast(E e)
+	LinkedList<String> linkedList = new LinkedList<>();
+
+	linkedList.addLast(e:"a");
+	linkedList.addLast(e:"b");
+	linkedList.addLast(e:"c");
+	for(String str:linkedList){
+		System.out.println(str);	
+	}	//因为往后添加，从头遍历，所以结果是 a b c
+	
+	
+	//getFirst()，getLast()
+	System.out.println(linkedList.getFirst());	//a
+	System.out.println(linkedList.getLast());	//c
+	
+	//removeFirst(),removeLast()
+	linkedList.removeFirst();
+	linkedList.removeLast();
+	for(String str:linkedList){
+		System.out.println(str);	
+	}	//头尾被删只剩 b
+	
+	//E pop()	//把链表竖起来当栈来看
+	linkedList.addLast(e:"c")
+	linkedList.pop();
+	for(String str:linkedList){
+		System.out.println(str);	
+	}	//pop 把在前面的元素 b 删除，结果为 c
+
+	//void push(E e)    竖起来往栈顶添加元素，相当于往链表的头添加元素	
+	linkedList.push(e:"h")
+	for(String str:linkedList){
+		System.out.println(str);	
+	}	//因为是往头添加元素，所以结果为 h c
+	
+	
+	//boolean isEmpty()	//判断是否为空
+	System.out.println(linkedList.isEmpty());
+	
+	//不为空，返回 false
+	
+
+}		
 
 
 ```
 
 4/15
 
-练习
+## 练习
 ```
 public class Person {
     private int id;
@@ -2834,3 +2888,22 @@ Process finished with exit code 1
 > https://blog.csdn.net/weixin_41205148/article/details/102730057
 
 > 不需要太深究原理,了解这个错误,知道正确的写法即可.
+
+4/16
+
+**LinkedList 的使用（非 List 标准）
+
+专门用来操纵双向链表的一些方法（不是List接口中定义的标准）
+
+![IO _00M9M@ZPS 7PAJ)P1@X](https://user-images.githubusercontent.com/110222247/232318741-5e4c790f-d3c2-45ab-a6ed-24ce52df24b2.png)
+
+
+
+
+
+
+
+
+
+
+
