@@ -2899,8 +2899,21 @@ Process finished with exit code 1
 
 
 
+4/17
 
+## Set 接口
 
+set 接口继承自 Collection，Set 接口中没有新增方法，方法和 Collection 保持完全一致。
+
+前面通过 List 学习的方法在 Set 中仍然适用
+
+**Set 接口特点
+
+Set 特点：无序，不可重复。
+无序：指 Set 中的元素没有索引，我们只能遍历查找；
+不可重复：不允许加入重复的元素（新元素如果和 Set 中某个元素通过 equals() 方法对比为 true，则只能保留一个）
+
+Set 常用实现类： HashSet,TreeSet等，我们一般使用 HashSet
 
 
 
