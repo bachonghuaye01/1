@@ -2915,6 +2915,30 @@ Set 特点：无序，不可重复。
 
 Set 常用实现类： HashSet,TreeSet等，我们一般使用 HashSet
 
+4/19
+
+## HashSet 容器类
+
+HashSet 是一个没有重复元素的集合，不保证元素的顺序，而且 HashSet 允许有null元素。
+
+HashSer是采用哈希算法实现，底层实际是用 HashMap 实现的(HashSet 本质就是一个简化版的 HashMap)，因此查询效率和增删效率都比较高。
+
+**Hash 算法原理**
+
+Hash 算法也称之为散列算法
+
+模9运算，指除以9取余。这里26除9等于2余8，所以放在索引为8的格子里。如果该位置已经有数字则后移一位。
+
+
+![QQ图片20230420051048](https://user-images.githubusercontent.com/110222247/233189027-2d5f769e-e315-4e5e-a5a3-ee818dc0a2d5.png)
+
+
+
+
+
+
+
+
 
 
 
