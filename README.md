@@ -2932,7 +2932,39 @@ Hash 算法也称之为散列算法
 
 ![QQ图片20230420051048](https://user-images.githubusercontent.com/110222247/233189027-2d5f769e-e315-4e5e-a5a3-ee818dc0a2d5.png)
 
+4/21
 
+**HashSet 的使用**
+
+```
+//实例化HashSet
+Set<String> set = new HashSet<>();
+//set找下包，Alt+回车
+//添加元素
+set.add("a");
+set.add("b1");
+set.add("c2");
+set.add("d");
+set.add("a");
+
+//获取元素,(在 set 容器中没有索引，所以没有对应的 get(int index)方法，需要参数索引，所以用不了)
+for(String str: set){
+	System.out.println(str);
+}
+//结果为乱序且只有一个 a ，因为不允许有重复的元素出现
+
+//删除元素
+boolean flag = set.remove("c2");
+System,out,println(flag);
+for(String str: set){
+	System.out.println(str);
+}
+
+//返回一个元素的个数
+int size = set.size();
+System.out.println(size);
+
+```
 
 
 
