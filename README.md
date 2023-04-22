@@ -2964,9 +2964,69 @@ for(String str: set){
 int size = set.size();
 System.out.println(size);
 
+
+//实例化HashSet
+Set<Users> set1 = new HashSet<>();
+//泛型指定下方创建的 Users 类型
+Users u = new Users("oldlu",18);	//users=用户名，oldlu 为姓名，18 为年龄
+Users u1 = new Users("oldlu",18);
+
+//把这两个对象添加到 Set 当中
+set1.add(u);
+set1.add(u1);
+
+System.out.println(u.hashCode());
+System.out.println(u1.hashCode());	//通过这里可以得知实际上的 hashCode 值并不相同，存放到了不同的位置，所以并没有调用 equals() 方法
+
+for(Users users:set1){			//输出了看似相同的两个结果
+	System.out.println(users);
+	
+	//在下方 Users 类中重写 hashCode 和 equals() 后输出正确结果
+}
+
+
 ```
 
+4/22
 
+**HashSet 存储特征分析**
+HashSet 是一个不保证元素的顺序且没有重复元素的集合，是线程不安全的。HashSet 允许有 null 元素。
+
+无序：
+
+在HashSet 中底层是使用 HashMap 存储元素的。HashMap 底层使用的是数组与链表实现元素的存储。元素在数组中存放时，并不是有序存放的也不是随机存放的。而是对元素的哈希值进行运算决定元素在数组中的位置。(散列表)
+
+不重复：
+
+当两个元素的哈希值进行运算后得到相同的在数值中的位置时，会调用元素的 equals() 方法判断两个元素是否相同。如果元素相同则不会添加该元素，如果不相同则会使用**单向链表**保存该元素。(把元素放到节点当中，然后把节点再放到数组当中，这样让上一个节点指向下一个节点)
+
+**通过 HashSet 存储自定义对象**
+
+**创建 Users 对象**
+
+```
+public calss Users{
+	private String username;
+	private int userage;
+	
+	//创建一个有参的构造方法
+	//右键-Generat-Constructor-选中-ok
+	
+	//创建一个无参的构造方法
+	//右键-Generat-Constructor-Select None
+	
+	
+	//因为并没有调用 equals() 方法，为了解决这个问题需在 Users 类中重写 hashCode 和 equals()
+	//右键-Generat-equals() and hashCode()-Next-Finish
+	
+	
+	//生成 Getter and Setter 方法
+	//右键-Generate-Getter and Setter-选中-ok
+
+	//重写 toString() 方法
+	//右键-Generate-toString()-选中-ok
+	}
+```
 
 
 
