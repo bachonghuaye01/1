@@ -3040,6 +3040,32 @@ TreeSet 是一个可以对元素进行排序的容器。他的底层实际是用
 
 2.通过比较器指定比较规则
 
+4/25 
+
+## TreeSet的使用
+
+```
+public class TreeSetTest
+	public static void main(String[] args) {
+	//实例化 TreeSet
+	Ser<String> set = new TreeSet()；
+	
+	//添加元素
+	set.add("c");
+	set.add("a");
+	set.add("d");
+	set.add("b");
+	set.add("a");		//做排序处理时会调用 compareTo(String anotherString) 方法来给定排序规则
+	
+String 类（ Inteagr类 也可以）实现了名为 Comoarable<String> 的接口，接口中包含 compareTo(String anotherString)（比较两个字符串的字典）
+	
+	//获取元素
+	for(String str :set){
+		System.out.println(str);
+	}
+}
+
+```
 
 
 
