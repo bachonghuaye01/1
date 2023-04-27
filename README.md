@@ -3006,7 +3006,7 @@ HashSet 是一个不保证元素的顺序且没有重复元素的集合，是线
 **创建 Users 对象**
 
 ```
-public calss Users{
+public calss Users {
 	private String username;
 	private int userage;
 	
@@ -3058,16 +3058,137 @@ public class TreeSetTest
 	set.add("b");
 	set.add("a");		//做排序处理时会调用 compareTo(String anotherString) 方法来给定排序规则
 	
-String 类（ Inteagr类 也可以）实现了名为 Comoarable<String> 的接口，接口中包含 compareTo(String anotherString)（比较两个字符串的字典）
+String 类（ Inteagr类 也可以）实现了名为 Comparable<String> 的接口，接口中包含 compareTo(String anotherString)（比较两个字符串的字典）
  >这行里单词有错字.
 	//获取元素
 	for(String str :set){
 		System.out.println(str);
+		
 	}
 }
 
 ```
 > 木木,我前几天去大庆找朋友玩了,这几天没给你看,你现在的工作忙吗,为什么总是断更新呢,而且最近这几天的内容是不是有点太少了,每天除了打工的时间,分配给学习的时间有游戏的三分之一吗,程序员是终身学习的职业,我们现在学的也是基础,如果连这里都要马马虎虎的话,就算就职,也会到处踩坑,既然想做,一定拿出态度,每天多花点时间在学习上,集合框架这个部分在培训班,我觉得不应该超过一周,你单单看Set就已经超过一周了,而且我相信你也只是浅浅了解,花了大量的时间也没把知识点吃透,我之前觉得培训班没用,现在来看最起码能保证你的最低进度,但是网课的话,你又能不能跟得上,这些事我都挺担心的,你有时间给我再打个电话吧.
 
+4/27
 
+通过元素自身实现比较规则
+
+在元素自身实现比较规则时，需要实现 Comparable 接口中的 compareTo 方法 ，该方法中用来定义比较规则。
+
+TreeSet 通过调用该方法来完成对元素的排序处理。
+
+```
+public calss Users implements Comparable<Users>{
+        //通过这个 Users（元素自身） 去和另一个 Users 去比较，所以这里的泛型类型是 <Users>
+        //然后，要选中 <Users> 中的一个名为 CompareTo 的抽象方法
+        
+	private String username;
+	private int userage;
+	
+	//创建一个有参的构造方法
+	//右键-Generat-Constructor-选中-ok
+	
+	//创建一个无参的构造方法
+	//右键-Generat-Constructor-Select None
+	
+	
+	//因为并没有调用 equals() 方法，为了解决这个问题需在 Users 类中重写 hashCode 和 equals()
+	//右键-Generat-equals() and hashCode()-Next-Finish
+	
+	
+	//生成 Getter and Setter 方法
+	//右键-Generate-Getter and Setter-选中-ok
+
+	//重写 toString() 方法
+	//右键-Generate-toString()-选中-ok
+	}
+	
+	
+	
+	//定义比较规则
+	@Override
+	public int compareTo(Users o){
+	                //这个方法是用来比较定义的，所以肯定需要一个参数，这个参数类型取决于之前在 Comparable<> 中所定义的
+	    return 0;
+	}
+	
+	//这个方法会返回一个 int 的值，用整型的值来表示大小或者相等的问题
+	//正数：大  ， 负数：小  ， 0：相等
+	
+	//例：按照年龄排序
+	@Override
+	public int compareTo(Users o){
+	    if(this.userage > o.getUserage)(){
+	    //当前对象的年龄 > 传过来的对象的年龄则认为比他大,返回1
+	        return 1
+	    }
+	    //否则返回-1
+          return -1;
+          
+          //如果年龄相等的话谁前谁后无所谓，那么就不需要在做是否相等的判断
+          /*需要通过姓名做比较的情况
+          if(this.userage == o.get.userage()){
+               return this.username.compareTO(o.get.userage());
+            //因为 String 已经实现了对字符串的比较，所以可以直接调用它里面的 comparTo 来完成两个字符串大小比较，直接输入 o.get.userage() 即可
+          }
+          */
+          
+	}
+	//至此，返回了一个由小到大的比较规则
+	
+	
+```
+
+
+
+```
+public class TreeSetTest
+	public static void main(String[] args) {
+	//实例化 TreeSet
+	Ser<String> set = new TreeSet()；
+	
+	//添加元素
+	set.add("c");
+	set.add("a");
+	set.add("d");
+	set.add("b");
+	set.add("a");		//做排序处理时会调用 compareTo(String anotherString) 方法来给定排序规则
+	
+String 类（ Inteagr类 也可以）实现了名为 Comparable<String> 的接口，接口中包含 compareTo(String anotherString)（比较两个字符串的字典）
+ >这行里单词有错字.
+	//获取元素
+	for(String str :set){
+		System.out.println(str);
+		
+		
+	Set<Users> set1 = new TrssSet<>();
+	Users u = new users(username='oldlu',userage=18);
+	Users u1 = new users(username='admin',userage=22);
+	/*Users u2 = new users(username='sxt',userage=22);*/
+	set1.add(u);
+	set1.add(u1);
+	/*set1.add(u2);*/
+	for(Users users:set1){
+	    System.out.println(users);
+	}
+		//这里会报异常，无法转换成 Comparable接口。因为现在在 TrssSet 中存放 Users 时并没有给它排序规则，（无论是自身的比较规则还是外部的比较器，都没有给它）
+		
+		//在定义了 例：按照年龄排序 的内容后就不会再报错
+		//返回
+		 users{username='oldlu',userage=18}
+		 users{username='admin',userage=22}
+		     //即按年龄从小到大排序的排序规则
+		     
+		 //在需要通过姓名做比较，并添加了 u2 的情况下 
+		 //返回
+		 users{username='oldlu',userage=18}
+		 users{username='admin',userage=22}
+		 users{username='sxt',userage=22}
+		     //即按年龄和姓名从小到大从前到后的排序规则
+		
+	}
+}
+
+```
 
