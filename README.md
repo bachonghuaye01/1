@@ -3106,7 +3106,7 @@ public calss Users implements Comparable<Users>{
 	
 	
 	
-	//定义比较规则
+	//定义比较规则    
 	@Override
 	public int compareTo(Users o){
 	                //这个方法是用来比较定义的，所以肯定需要一个参数，这个参数类型取决于之前在 Comparable<> 中所定义的
@@ -3155,7 +3155,7 @@ public class TreeSetTest
 	set.add("b");
 	set.add("a");		//做排序处理时会调用 compareTo(String anotherString) 方法来给定排序规则
 	
-String 类（ Inteagr类 也可以）实现了名为 Comparable<String> 的接口，接口中包含 compareTo(String anotherString)（比较两个字符串的字典）
+String 类（ Inteagr类 也可以）实现了名为 Comparable<String> 的接口，接口中包含 compareto(String anotherString)（比较两个字符串的字典）
  >这行里单词有错字.
 	//获取元素
 	for(String str :set){
@@ -3191,4 +3191,89 @@ String 类（ Inteagr类 也可以）实现了名为 Comparable<String> 的接�
 }
 
 ```
+4/28
+```
+//我看他选中 Comparator 后按了什么快捷键直接呼出了下面的内容，那个快捷键是啥啊我找了半天没找到
+@Override
+public int compareTo(Object o1,Object o2){
+        return 0;
+    }
+}
+```
+
+## 通过比较器实现比较规则
+
+通过比较器定义比较规则时，我们需要单独创建一个比较器，比较器需要实现 Comparator 接口中的 compare 方法来定义比较规则。
+
+在实例化 TreeSet 时将比较器对象交给 TreeSet 来完成元素的排序处理。此时元素自身就不需要实现比较规则了
+
+```
+public class Student
+	public static void main(String[] args) {
+	    pr
+	
+	
+	}
+
+
+
+
+
+
+```
+```public class TreeSetTest
+	public static void main(String[] args) {
+	Ser<String> set = new TreeSet()；
+	
+	set.add("c");
+	set.add("a");
+	set.add("d");
+	set.add("b");
+	set.add("a");	
+	
+	for(String str :set){
+		System.out.println(str);
+		
+		
+	Set<Users> set1 = new TrssSet<>();
+	Users u = new users(username='oldlu',userage=18);
+	Users u1 = new users(username='admin',userage=22);
+	Users u2 = new users(username='sxt',userage=22);
+	set1.add(u);
+	set1.add(u1);
+	set1.add(u2);
+	for(Users users:set1){
+	    System.out.println(users);
+	}
+    Set<Student> set2 = new TreeSet<>(new StudentComparator());
+		
+		
+		
+		
+	}
+}
+
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
