@@ -3207,20 +3207,83 @@ public int compareTo(Object o1,Object o2){
 
 在实例化 TreeSet 时将比较器对象交给 TreeSet 来完成元素的排序处理。此时元素自身就不需要实现比较规则了
 
+**创建 Student 类
 ```
-public class Student
-	public static void main(String[] args) {
-	    pr
-	
-	
-	}
+public class Student {
+    private String name;
+    private int age;
 
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
+    public Student() {
+    }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return age == student.age && Objects.equals(name, student.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age);
+    }
+}
+```
+**创建比较器
 
 ```
+public class StudentComparator implements Comparator<Student> {
+
+    //定义比较规则
+    @Override
+    public int compareTo(Student o1,Student o2){
+        if(o1.getAge() > o2.getAge()) {
+            return 1;
+        }
+
+        if(o1.getAge() == o2.getAge()){
+            return o1.getName().compareTo(o2.getName());
+        }
+        return -1;
+    }
+
+    //compareTo 它不是元素自身的，需要两个元素来做比较，所以只能依赖于把两个元素传递过来再做比较
+    //这也是他跟自身元素比较的一个区别，他是需要两个元素的
+}
+
+```
+4/29
+在 TreeSet 中存储 Users 对象
 ```public class TreeSetTest
 	public static void main(String[] args) {
 	Ser<String> set = new TreeSet()；
@@ -3233,7 +3296,7 @@ public class Student
 	
 	for(String str :set){
 		System.out.println(str);
-		
+	}	
 		
 	Set<Users> set1 = new TrssSet<>();
 	Users u = new users(username='oldlu',userage=18);
@@ -3245,22 +3308,63 @@ public class Student
 	for(Users users:set1){
 	    System.out.println(users);
 	}
+	
+	
+	
+	
+	
     Set<Student> set2 = new TreeSet<>(new StudentComparator());
+		Student s = new Student (name:"oldlu",age：18)；
+		Student s1 = new Student (name:"admin",age：22)；
+		Student s2 = new Student (name:"sxt",age：22)；
 		
-		
-		
-		
-	}
+		set2.add(s):
+		set2.add(s1):
+		set2.add(s2):
+	
+	
 }
 
 
+```
+4/29
+
+##单例集合练习
+
+**产生1-10直接的随机数([1,10]闭区间（包含1和10）)，将不重复的10个随机数放到容器中
+
+**使用 List 类型容器实现
+
+```
+import java.util.List;
+
+public class ListDemo {
+    public static void main(String[] arges){
+        List<Integer> list = new ArrayList<>();
+        while(true){
+            //产生随机数
+            int num = (int)(Math.random()*10+1);
+            //判断当前元素在容器中是否存在
+            if(list.contains(num)){
+                list.add(num);
+            }
+            //结束循环
+            if(list.size() == 10){
+                break;
+
+            }
+
+        }
+        for(Integer i:list){
+            System.out.println(i);
+        }
+
+    }
+
+}
 
 
 ```
-
-
-
-
 
 
 

@@ -8,6 +8,10 @@ public class StudentComparator implements Comparator<Student> {
         if(o1.getAge() > o2.getAge()) {
             return 1;
         }
+
+        if(o1.getAge() == o2.getAge()){
+            return o1.getName().compareTo(o2.getName());
+        }
         return -1;
     }
 
