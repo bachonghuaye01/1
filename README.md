@@ -3417,7 +3417,7 @@ Map 与 Collecton 的区别；
 
 **Map的常用方法
 
-图片
+![SN((P2E8%O2S4)7Q%GIP M6](https://user-images.githubusercontent.com/110222247/235341849-2b2af36e-f4ca-4bf6-b11d-bd9ba3725407.png)
 
 
 
