@@ -3207,7 +3207,7 @@ public int compareTo(Object o1,Object o2){
 
 在实例化 TreeSet 时将比较器对象交给 TreeSet 来完成元素的排序处理。此时元素自身就不需要实现比较规则了
 
-**创建 Student 类
+**创建 Student 类**
 ```
 public class Student {
     private String name;
@@ -3259,7 +3259,7 @@ public class Student {
     }
 }
 ```
-**创建比较器
+**创建比较器**
 
 ```
 public class StudentComparator implements Comparator<Student> {
@@ -3329,11 +3329,11 @@ public class StudentComparator implements Comparator<Student> {
 ```
 4/29
 
-##单例集合练习
+## 单例集合练习
 
-**产生1-10直接的随机数([1,10]闭区间（包含1和10）)，将不重复的10个随机数放到容器中
+**产生1-10直接的随机数([1,10]闭区间（包含1和10）)，将不重复的10个随机数放到容器中**
 
-**使用 List 类型容器实现
+**使用 List 类型容器实现**
 
 ```
 import java.util.List;
@@ -3368,7 +3368,7 @@ public class ListDemo {
 
 4/30
 
-**使用 Set 类型容器实现
+**使用 Set 类型容器实现**
 
 ```
 public class SetDemo {
@@ -3396,9 +3396,10 @@ public class SetDemo {
 
 ## 双例集合
 
-**Map接口
+**Map接口**
 
-**Map接口特点
+**Map接口特点**
+
 Map 接口定义了双例集合的存储特征，他并不是 Collection 接口的子接口。
 双例集合的存储特征是以 Key 与 Value 结构为单位进行存储。体现的是数学中函数 y=f(x)概念
 
@@ -3415,7 +3416,7 @@ Map 与 Collecton 的区别；
 + Map 中常用的容器为 HashMap，TreeMap 等
 
 
-**Map的常用方法
+**Map的常用方法**
 
 ![SN((P2E8%O2S4)7Q%GIP M6](https://user-images.githubusercontent.com/110222247/235341849-2b2af36e-f4ca-4bf6-b11d-bd9ba3725407.png)
 
