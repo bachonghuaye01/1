@@ -3366,8 +3366,58 @@ public class ListDemo {
 
 ```
 
+4/30
+
+**使用 Set 类型容器实现
+
+```
+public class SetDemo {
+    public static void main(String[] arges){
+        Set<Integer> set = new HashSet<>();
+        while (true){
+            int num = (int)(Math.random()*10+1);
+            set.add(num);
+        //将元素添加到容器中，由于Set类型容器不允许有重复元素，所以不需要判断
+            set.add(num);
+        //结束循环
+            if(set.size() == 10){
+            break;
+            }
+        }
+    for (Integer i:set){
+        System.out.println(i);
+    }
+    //结果为12345678910，HashSet不排序，出现该结构的原因是“假排序”
+      //数组的初始长度是16，所以在用小于16的数去模时，1%16=0...1，商为0，余数为数字本身，而 HashSet 底层是数组+链表，所以会按顺序输出元素本身，实际并没有做排序
+    }
+}
+
+```
+
+## 双例集合
+
+**Map接口
+
+**Map接口特点
+Map 接口定义了双例集合的存储特征，他并不是 Collection 接口的子接口。
+双例集合的存储特征是以 Key 与 Value 结构为单位进行存储。体现的是数学中函数 y=f(x)概念
+
+Map 与 Collecton 的区别；
+
+++ Collection 中的容器，元素是孤立存在的(可以理解为单身)，向集合中存储元素采用一个元素的方式存储
+
+++ Map 中的容器，元素是成对存在的(理解为现代社会的夫妻)，每个元素由键与值两部分组成，通过键可以找对所对应的值
+
+++ Collection 中的容器称为单例集合，Map 中的容器称为双例集合
+
+++ Map 中的集合不能包含重复的键，值可以重复；每个键只能对应一个值
+
+++ Map 中常用的容器为 HashMap，TreeMap 等
 
 
+**Map的常用方法
+
+图片
 
 
 
