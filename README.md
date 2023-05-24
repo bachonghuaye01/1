@@ -3513,9 +3513,43 @@ public class HashMapTest {
             String  v  = entry.getValue();
             System.out.println(Key+" ------ "+v);
             
-        
-        
+        //Map 容器的并集操作
+	Map<String,String> map2 = new HashMap<>();
+	map2.put("f","F");
+	map2.put("c","cc");
+	map2.putAll(map);
+	//当去做两个容器并集操作时，被并集的容器的 value 会把当前容器中的相同的 value 覆盖
+	Set<String> keys2 = map2.keySet();
+ 	for(String key:keys2){
+	    System.out.println("key: "+key+" Value: "+map2.get(key))
 
+
+	//删除元素
+	String v = map.remove(key:"e");
+	Set<String> keys3 = map.keySet();
+	System.out.println(v);
+	//返回的是删除元素的 value
+
+	for(String key:keys3){
+	    System.out.println("key: "+key+" Value: "+map.get(key))
+
+
+	//判断 key 是否存在
+	boolean flag = map.containsKey("aaaa")	//设一个不存在的 aaaa
+	System.out.println(flag);		//返回的是 false
+	
+	boolean flag2 = map.containsKey("a")	//设一个存在的 a
+	System.out.println(flag2);		//返回的是 true
+
+	//判断 value 是否存在 
+	boolean flag3 map.containsValue("BB");	//设一个不存在的 BB
+	System.out.println(flag3);		//返回的是 false
+	
+	boolean flag3 map.containsValue("B");	//设一个存在的 B
+	System.out.println(flag4);		//返回的是 true
+
+
+}
     }
 
 }
@@ -3524,7 +3558,14 @@ public class HashMapTest {
 
 > 最好用超链接的方式把这几个文件都链接上,还有为什么最近总是断更新啊
 
+5/24
 
+**Map 容器的并集操作**
+
+**删除元素**
+使用 remove 来删除
+
+**判断 key 或 value 是否存在**
 
 
 
